@@ -1,5 +1,6 @@
 {
   "minimal-style@@active-line-on": true,
   "minimal-style@@folding-offset": 32,
-  "minimal-style@@line-number-color@@dark": "#F8F8F2"
+  "minimal-style@@line-number-color@@dark": "#F8F8F2",
+  "minimal-advanced@@animations": "disable-animations"
 }
