@@ -12,8 +12,6 @@ $$
 
 The effective force is therefore,
 $$
-F_p = \sum_{part} a_\text{to wall} = \sum_{part} \frac{\Delta p}{\Delta t} = \sum_{part} \frac{m v^2_x}{L} = \frac{m}{L} N <v^2_x> = mnS<v^2_x>
+F_p = \sum_{part} a_\text{to wall} = \sum_{part} \frac{\Delta p}{\Delta t} = \sum_{part} \frac{m v^2_x}{L} = \frac{m}{L} N \left< v^{2}_{x} \right>  = mnS \left< v^{2}_{x} \right>
 $$
-- Suppose to be an angle brackets but I don't know how to insert them
-
 Here, notice that if we double the number of particle and the volume, if $L$ doubles, then the value doesn't scale, but if $S$ doubles, it does. This is the idea of extensive and intensive values. They are values that scale with the number of particles, and values that do not scale, respectively.
