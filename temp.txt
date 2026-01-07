@@ -1,55 +1,57 @@
 ACC - All writing. Not much new material
-AFM
-AMI
+AFM - Taking measurements with an atomic force microscope
+AMI - Taking measurements with an interferometer. Oscilloscope(?)
 BRI - Laser with Fabry-Perot. Observe scattering
 C3D - Conductivity and current in flat planes or "half-universes"
 CHL - Precise holography using computers. Limited write up
 CC - Use a cloud chamber to make particle physics measurements
-CMP-hc
+CMP-hc - Measuring heat capacity and checking for phase transitions. Oscilloscope
 CMP-ms - Magnetic susceptibility of condensed matter at different temperatures. Oscilloscope
-CMP-r
+CMP-r - Using a vacuum chamber and cryostat to analyze super conductivity
 COMP - Compton effect and scattering. Firing something at objects
 DCE - Looking at dominoes falling with photogates. Limited write up
 DFR - Firing a laser into something? Oscilloscope
 ESR - Measurements with electron spin resonance.
 FAR - Looking at the emergence of Faraday waves in a shaker. Oscilloscope
-FE
+FE - Growing single ferroelectric crystals. Analyze thermal physics and phase transitions
 FTIR - Studying climate change related gases using Fourier spectroscopy. No write up
 FTS - Fourier transforms with a Michelson interferometer (familiar). No write up.
-FVF
+FVF - The emergence of fractal patterns from the non-linear behaviour of fluids
 GAUS - Pinhole interferometer. Working with Fraunhofer diffraction
 GE - Studying Germanium crystals, high-resolution gamma ray detectors
-GOUY
+GOUY - Studying magnetic susceptibility. Requires reading textbook chapters
 GRAN - Looks cool but requires non-linear physics. Python and ffmpeg
-HALL - Semiconductor resisance under different circumstances
-HENE
+HALL - Semiconductor resistance under different circumstances
+HENE - Analyzing the fundamental properties of a HeNe laser
 HEP - All Python, no experiment
-HTCK
+HTCK - Measuring resistance and magnetic susceptibility in a high-temperature super conductor
 HTCM - Make your own high temperature superconductor. Oscilloscope
 KNOT - Explore the untangling of knots after being shaken. Python
 LAUE - Taking pictures of crystals
 LENS - Analyzing chi-squared and aberrations of lenses
-LPP
+LPP - Sound propagation and dispersion within a tube. Really old software
 MOS - Working with radiation and oscilloscopes
-MUON
+MUON - Measuring the mean lifetime of muons. Oscilloscope
 NMR - Magnetic moment of the proton. Oscilloscope
 O3M - Going outside and measuring ozone with a cheap instrument
 OPMI - Looking through an optical microscope. No write up
 OPT - Analyzing optical tweezers, precise instruments primarily used in biological physics
-PXR
+PXR - Scattering a collimated X-ray beam on powders and lattices
 QIE - Entanglement and non-locality with lasers. Technical equipment
-RAM
-RB
+RAM - Measure the frequencies of some vibrational modes using Raman scattering
+RB - Rubidium optical pumping. I don't really understand the theory
 RES - Electrical resistivity and superconductors
 SCH - Visualizing otherwise invisible flow phenomona with collimated LED light. New write up
 SIL - Uses recent technology. Cool, but I don't know what it's used for
 SOL - Solitary waves in a wave-maker. Python and ffmpeg analysis
 SONO - Generation of light from the sound of microscopic bubbles popping. Not completely understood
-SQM
+SQM - Conducting experiments with a super sensitive magnetometer. No experimental write up, oscilloscope
 STM - Look at things with a tunneling microscope. Says it's hard on the manual
 WTK - Weather simulations using particles in a water tank
 XRF - Activation of fluorescent light with x-rays. Oscilloscope
 
 Ideas:
-- Probably one non-linear, because there's coding
-- Probably one optics/lasers, because I'm familiar
+- One non-linear lab. They sound cool, and they're programming heavy
+- One optics lab. I'm familiar with lasers, and spectroscopy is important
+- One climate physics lab(?). I enjoy the topic
+  - My supervisor could be Tahir Shaaran
