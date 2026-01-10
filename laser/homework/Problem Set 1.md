@@ -54,3 +54,44 @@ Mathematically, $b$ is equivalent to $\Gamma$. $b$ is the decay rate of the phot
 
 ---
 d.
+First equation
+$$
+0=-aN_{2}q - \Gamma N_{2}+p \implies aN_{2}q + \Gamma N_{2} = N_{2} (aq+\Gamma) =p
+$$
+$$
+N_{2} = \frac{aq+\Gamma}{p}
+$$
+Second equation:
+$$
+0=aN_{2}q - bq = a \left( \frac{aq+\Gamma}{p} \right)q - bq = \frac{a^{2}}{p} q^{2} + \left( \frac{a\Gamma}{p}-b \right)q
+$$
+Factor out $q$,
+$$
+\left[ \frac{a^{2}}{p} q + \left( \frac{a\Gamma}{p}-b \right) \right] q =0
+$$
+Which implies that $q=0$ or,
+$$
+q = \frac{p}{a^{2}} \left( b-\frac{a\Gamma}{p} \right) = \frac{bp-a\Gamma}{a^{2}}
+$$
+Substitute into $N_{2}$,
+$$
+N_{2} = \frac{aq+\Gamma}{p} = \frac{1}{p} \left[ a\left( \frac{bp-a\Gamma}{a^{2}} \right) + \Gamma \right] = \frac{b}{a}
+$$
+In summary:
+$$
+\bar{q} = \frac{bp-a\Gamma}{a^{2}} \qquad \bar{N}_{2} = \frac{b}{a}
+$$
+---
+e.
+$$
+\bar{q}= \frac{bp-a\Gamma}{a^{2}} >0 \implies bp-a\Gamma>0
+$$
+$$
+bp>a\Gamma
+$$
+In terms of just the pumping rate this is,
+$$
+p > \frac{a\Gamma}{b}
+$$
+---
+f.
