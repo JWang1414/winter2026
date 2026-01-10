@@ -95,3 +95,16 @@ p > \frac{a\Gamma}{b}
 $$
 ---
 f.
+The rate of change in the photons is,
+$$
+\dot{q} = aN_{2}q - bq = aN_{2}q - ab\bar{N}_{2}q = aq(N_{2} - \bar{N}_{2})
+$$
+- I believe this is the output of the laser, but I'm not sure how to interpret it
+
+Another possible answer is to use the stimulated emission term in the $N_{2}$ equation $aN_{2}q$ but I'm not sure how to use it
+
+---
+g.
+The spontaneous emission term is $\Gamma N_{2}$
+- Don't really know how to continue from here
+# Question 2
