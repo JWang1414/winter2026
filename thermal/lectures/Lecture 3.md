@@ -1,5 +1,8 @@
 # Entropy
-Oftentimes we might think that more organized looking configurations of particles are less probably. This isn't really case, they are just as likely as any other probability that looks more chaotic. It just happens that there are for more chaotic probabilities than there or "organized" states.
+![[Pasted image 20260112113934.png]]
+Which one of these configurations do you think is more probable? One might typically expect that the one on the right is more probable, but they really have the same probability of occurring.
+
+The reason we believe the right state to be the more probable is because there are far more states that do not exhibit order than ones that do. That is, we are more likely to see a state we believe to be "chaotic" as opposed to ordered.
 
 Imagine some arbitrary macrostate defined by the extensive variables $\varepsilon=(N, E, V, \dots)$ and $\Omega(\varepsilon)$ to be the number of microstates compatible with the macro constraints.
 
