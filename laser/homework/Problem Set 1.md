@@ -99,12 +99,19 @@ The rate of change in the photons is,
 $$
 \dot{q} = aN_{2}q - bq = aN_{2}q - ab\bar{N}_{2}q = aq(N_{2} - \bar{N}_{2})
 $$
-- I believe this is the output of the laser, but I'm not sure how to interpret it
-
-Another possible answer is to use the stimulated emission term in the $N_{2}$ equation $aN_{2}q$ but I'm not sure how to use it
+So the output of the laser is proportional to the excess number of excited electrons $N_{2}-\bar{N}_{2}$.
 
 ---
 g.
-The spontaneous emission term is $\Gamma N_{2}$
-- Don't really know how to continue from here
+The scale factor governing the spontaneous emissions is $\Gamma$. Above the threshold we have the condition:
+$$
+p> \frac{a\Gamma}{b} \implies \frac{bp}{a} > \Gamma
+$$
+- So this establishes an upper-bound on the spontaneous emission
+
+The loss term in the photons is $bq$ and so we also have,
+$$
+b>ap\Gamma
+$$
+So this is the number of photons that are lost
 # Question 2
