@@ -115,3 +115,12 @@ b>ap\Gamma
 $$
 So this is the number of photons that are lost
 # Question 2
+---
+a.
+- Spectral density of the blackbody spectra have been plotted using Python
+- I used 298.15 K for room temperature, and 5800 K for the temperature of the Sun
+- Linear scale, and assumed the bandwidth "cutoff" would be roughly 1/3 of the max height
+- Wavelength has been pasted at the bottom of the code
+---
+b.
+- The coherence time for room temperature is also pasted at the bottom of the code
