@@ -101,3 +101,71 @@ $$
 - Of course, $x_{i+1}$ is edited using the updates $v_{i+1}$ as opposed to the other way around.
 ![[Pasted image 20260114103650.png]]
 A comparison between the analytical spring and the Euler-Cromer simulated one
+# Periodic functions
+An oscillation is a motion that is periodic in time. That is, for some function $f(t)$
+$$
+\forall t, \qquad f(t) = f(t+T)
+$$
+For some period $T$.
+
+Fourier's Transform:
+> Any periodic function that is piecewise continuous can be represented as a sum of sinusoidal functions with appropriate amplitudes and frequencies
+
+Recall that the general form of a Fourier transform is:
+$$
+f(t) = \frac{\alpha_{0}}{2} + \sum_{n=1}^{\infty} \left[ \alpha_{n} \cos(\omega_{n}t) + \beta_{n} \sin(\omega_{n}t) \right]
+$$
+Where $\alpha_{n}$ and $\beta_{n}$ are constants, and $\omega_{n}=2\pi n /T$.
+
+For some signal represented as a sine function,
+$$
+A \sin(\omega t+\phi)
+$$
+We define the angular frequency $\omega=2\pi/T$, frequency $f=\omega /2\pi=T^{-1}$, the phase constant $\phi$, and the amplitude $A$.
+# Complex numbers
+Define some complex number:
+$$
+z = x+iy
+$$
+The real and imaginary parts are:
+$$
+\mathrm{Re}\{ z \} = x \qquad \mathrm{Im}\{ z \}=y
+$$
+The complex conjugate is:
+$$
+z^* = x-iy
+$$
+The magnitude or modulus is,
+$$
+\lvert z \rvert = \sqrt{ zz^* } = \sqrt{ x^{2}+y^{2} }
+$$
+And the argument is,
+$$
+\arg\{ z \}=\theta \qquad \text{where } \cos\theta=\frac{x}{\lvert z \rvert } \text{ and } \sin\theta = \frac{y}{\lvert z \rvert }
+$$
+- Obviously in exponential form the argument is very easy to find, but I will keep these here to help refer back later
+# Polar form of complex numbers
+Define some complex number:
+$$
+z = A e^{ i\theta }
+$$
+Where,
+$$
+A = \lvert z \rvert  = \sqrt{ x^{2}+y^{2} } \qquad e^{ i\theta } = \cos\theta + i \sin\theta
+$$
+Conversions to Cartesian coordinates are:
+$$
+x = A \cos\theta \qquad y = A \sin\theta
+$$
+$$
+\cos\theta = \frac{x}{\lvert z \rvert } \qquad \sin\theta = \frac{y}{\lvert z \rvert }
+$$
+- The first line is just a default conversion from polar to Cartesian
+- Notice the second line follows the expression of the argument earlier
+# Practical implications for the description of oscillations
+- makes differential equations easier
+- Superposition is easier to compute
+
+For two signals with frequencies $\omega_{1}$ and $\omega_{2}$, the two are called *commensurate* if $\omega_{1}=r\omega_{2}$ where $r=m /n$ is a rational number. The superposed signal between the two is periodic with period $mT_{1}=nT_{2}$.
+
+*Beating* happens when two signals of identical amplitudes and different but close frequencies superpose. The phenomenon that arises is that of a vibration that is seemingly appearing and disappearing at regular intervals.
