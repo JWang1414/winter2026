@@ -17,8 +17,8 @@ E = 1000.0                       # total energy
 mA, mB = 1.0, 2.0                # masses of species A and B
 kB = 1.0                         # Boltzmann constant in simulation units
 
-np.random.seed(252)     # fix the seed for reproducibility; comment out for random runs
-#np.random.seed()       # uncomment this line to get different results each run -- needed during your experiments
+np.random.seed(252)
+# np.random.seed()
 
 # positions: uniform spacing inside (0, L) plus jitter
 jitter = 1/3; x = (L / N) * ( np.arange(0, N) + 0.5 + jitter * (np.random.rand(N) - 0.5) )
@@ -122,6 +122,16 @@ samples_A, samples_B = [], []
 impulse_left = 0.0; impulse_right = 0.0
 T_burn = None; processed = 0
 
+# # Plot a histogram of the initial velocity distribution
+# plt.hist(v, bins=30, density=True)
+# plt.title('Initial Velocity Distribution')
+# plt.xlabel('Velocity')
+# plt.ylabel('Density')
+# plt.tight_layout()
+# plt.grid()
+# plt.savefig('temp_images/initial_velocity_distribution_random2.png')
+# plt.show()
+# exit()
 
 while processed < num_events:
     ti, kind, idx_evt, gen = heapq.heappop(heap)
