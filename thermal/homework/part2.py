@@ -5,7 +5,6 @@
 import numpy as np                # Fundamental package for numerical computations
 import matplotlib.pyplot as plt   # Plotting library
 import heapq                      # Priority queue implementation
-from scipy.optimize import curve_fit
 
 # --------------------------------- #
 # Initialization of physical system #
@@ -160,13 +159,11 @@ while processed < num_events:
     else:
         i, vi_before = reflect_wall(idx_evt, T)
         if processed >= burn_in:
-            ##########################################
-            # WRITE YOUR OWN CODE HERE TO UPDATE THE #
-            # IMPULSE VARIABLES AND COMPUTE PRESSURE #
-            # DURING MEASUREMENT PHASE ONLY ##########
-            ##########################################
-            impulse_left += 0.0
-            impulse_right += 0.0
+            # accumulate impulse for pressure calculation
+            if idx_evt == 0:
+                impulse_left += 2 * abs(vi_before) * m[i]
+            else:
+                impulse_right += 2 * abs(vi_before) * m[i]
         if idx_evt == 0:
             push_pair(0, T); push_wall(LEFT, T)
         else:
@@ -180,6 +177,18 @@ while processed < num_events:
 
     if processed % verbosity == 0:
         print(f"Processed {processed:,} events...")
+
+# Determine the pressure from the gas
+time_total = T - T_burn
+area = 1.0  # set area to 1 because this is a 1D simulation
+pressure_left = impulse_left / (area * time_total)
+pressure_right = impulse_right / (area * time_total)
+pressure_avg = 0.5 * (pressure_left + pressure_right)
+
+# Print pressure results
+print(f"\nPressure on left wall: {pressure_left:.4e}")
+print(f"Pressure on right wall: {pressure_right:.4e}")
+print(f"Average pressure: {pressure_avg:.4e}\n")
 
 # Save samples_A and samples_B to files
 np.save('temp_images/samples_A.npy', np.array(samples_A))

@@ -47,3 +47,18 @@ The plots differ in the two cases because one is seeded and one is unseeded. The
 - I have the images attached in the `temp_images` folder
 - Only one image for the `252` seed, so just use the same image twice
 # Question 8
+- Successfully fit a Gaussian distribution to the normalized histogram of values, as required
+- Submit the code included in `part2q8.py`
+	- I load the samples from files because I saved them there. Probably worth it to mention in my answers
+- Specifically in the answer to this question, just submit lines 38-40
+
+By eyeball, it looks like both fits are quite accurate. The Gaussian matches very close, and the distribution is centred around 0.
+
+Supporting this claim is the fact that $\mu$ is very small for samples A and B. Both are within the order of magnitude of $10^{-3}$, however their uncertainties determined by the covariance matrix is also within the same order of magnitude.
+- Maybe it's because there's a lot of points clustered around the centre? Widening the peak? Doesn't look like this is the case though
+- Increasing the number of bins doesn't appear to remedy this issue
+
+The $\chi^{2}$ values are incredibly small, indicating a heavily over-fit function. Despite this, there are still 28 degrees of freedom. This has likely arisen because the Gaussian curve flawlessly models the equilibrium state all particles eventually reach in a 1-D particle system.
+
+- I didn't plot the residuals. This is a 2 mark question, surely they don't give a shit?
+# Question 9
