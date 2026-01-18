@@ -1,0 +1,154 @@
+--- SAMPLE 1 ---
+
+NA = 100; NB = NA; N = NA + NB   # number of particles
+density = 1.0                    # number density
+L = float(N / density)           # box length
+E = 1000.0                       # total energy
+mA, mB = 1.0, 2.0                # masses of species A and B
+kB = 1.0                         # Boltzmann constant in simulation units
+
+Fit results for Species A: mu = 6.3566e-03, sigma = 3.1884e+00
+Chi-squared = 3.4775e-04, dof = 28, chi-squared/dof = 1.2420e-05
+Parameter uncertainties: mu = 7.2917e-03, sigma = 5.9537e-03
+
+Fit results for Species B: mu = 6.5215e-03, sigma = 2.2485e+00
+Chi-squared = 4.0919e-04, dof = 28, chi-squared/dof = 1.4614e-05
+Parameter uncertainties: mu = 5.3264e-03, sigma = 4.3490e-03
+
+--- SAMPLE 2 ---
+
+NA = 100; NB = NA; N = NA + NB   # number of particles
+density = 1.0                    # number density
+L = float(N / density)           # box length
+E = 1000.0                       # total energy
+mA, mB = 4.0, 8.0                # masses of species A and B
+kB = 1.0                         # Boltzmann constant in simulation units
+
+Fit results for Species A: mu = 3.1783e-03, sigma = 1.5942e+00
+Chi-squared = 6.9550e-04, dof = 28.0000, chi-squared/dof = 2.4839e-05
+Parameter uncertainties: mu = 3.6459e-03, sigma = 2.9768e-03
+
+Fit results for Species B: mu = 3.2607e-03, sigma = 1.1243e+00
+Chi-squared = 8.1838e-04, dof = 28.0000, chi-squared/dof = 2.9228e-05
+Parameter uncertainties: mu = 2.6632e-03, sigma = 2.1745e-03
+
+--- SAMPLE 3 ---
+
+NA = 100; NB = NA; N = NA + NB   # number of particles
+density = 1.0                    # number density
+L = float(N / density)           # box length
+E = 1000.0                       # total energy
+mA, mB = 20, 40                  # masses of species A and B
+kB = 1.0                         # Boltzmann constant in simulation units
+
+Fit results for Species A: mu = 1.4214e-03, sigma = 7.1296e-01
+Chi-squared = 1.5552e-03, dof = 28.0000, chi-squared/dof = 5.5542e-05
+Parameter uncertainties: mu = 1.6305e-03, sigma = 1.3313e-03
+
+Fit results for Species B: mu = 1.4582e-03, sigma = 5.0278e-01
+Chi-squared = 1.8299e-03, dof = 28.0000, chi-squared/dof = 6.5355e-05
+Parameter uncertainties: mu = 1.1910e-03, sigma = 9.7246e-04
+
+--- SAMPLE 4 ---
+
+NA = 100; NB = NA; N = NA + NB   # number of particles
+density = 1.0                    # number density
+L = float(N / density)           # box length
+E = 10000.0                      # total energy
+mA, mB = 1.0, 2.0                # masses of species A and B
+kB = 1.0                         # Boltzmann constant in simulation units
+
+Fit results for Species A: mu = 2.0101e-02, sigma = 1.0083e+01
+Chi-squared = 1.0997e-04, dof = 28.0000, chi-squared/dof = 3.9274e-06
+Parameter uncertainties: mu = 2.3058e-02, sigma = 1.8827e-02
+
+Fit results for Species B: mu = 2.0623e-02, sigma = 7.1104e+00
+Chi-squared = 1.2940e-04, dof = 28.0000, chi-squared/dof = 4.6213e-06
+Parameter uncertainties: mu = 1.6844e-02, sigma = 1.3753e-02
+
+--- SAMPLE 5 ---
+
+NA = 1000; NB = NA; N = NA + NB  # number of particles
+density = 1.0                    # number density
+L = float(N / density)           # box length
+E = 1000.0                       # total energy
+mA, mB = 1.0, 2.0                # masses of species A and B
+kB = 1.0                         # Boltzmann constant in simulation units
+
+Fit results for Species A: mu = 5.3173e-03, sigma = 1.0054e+00
+Chi-squared = 1.3401e-04, dof = 28.0000, chi-squared/dof = 4.7860e-06
+Parameter uncertainties: mu = 1.1044e-03, sigma = 9.0172e-04
+
+Fit results for Species B: mu = 4.3030e-03, sigma = 7.1045e-01
+Chi-squared = 5.6088e-04, dof = 28.0000, chi-squared/dof = 2.0031e-05
+Parameter uncertainties: mu = 1.3067e-03, sigma = 1.0669e-03
+
+--- SAMPLE 6 ---
+
+NA = 100; NB = NA; N = NA + NB   # number of particles
+density = 1.0                    # number density
+L = float(N / density)           # box length
+E = 1000.0                       # total energy
+mA, mB = 1.0, 10                 # masses of species A and B
+kB = 1.0                         # Boltzmann constant in simulation units
+
+Fit results for Species A: mu = -3.2348e-03, sigma = 3.2069e+00
+Chi-squared = 4.2520e-04, dof = 28.0000, chi-squared/dof = 1.5186e-05
+Parameter uncertainties: mu = 7.1141e-03, sigma = 5.8086e-03
+
+Fit results for Species B: mu = 3.3790e-03, sigma = 1.0013e+00
+Chi-squared = 1.3438e-03, dof = 28.0000, chi-squared/dof = 4.7992e-05
+Parameter uncertainties: mu = 3.6096e-03, sigma = 2.9472e-03
+
+--- PRESSURE 1 ---
+
+NA = 100; NB = NA; N = NA + NB   # number of particles
+density = 1.0                    # number density
+L = float(N / density)           # box length
+E = 1000.0                       # total energy
+mA, mB = 1.0, 2.0                # masses of species A and B
+kB = 1.0                         # Boltzmann constant in simulation units
+
+Pressure on left wall: 1.0042e+01
+Pressure on right wall: 9.9972e+00
+Average pressure: 1.0019e+01
+
+--- PRESSURE 2 ---
+
+NA = 1000; NB = NA; N = NA + NB  # number of particles
+density = 1.0                    # number density
+L = float(N / density)           # box length
+E = 1000.0                       # total energy
+mA, mB = 1.0, 2.0                # masses of species A and B
+kB = 1.0                         # Boltzmann constant in simulation units
+
+Pressure on left wall: 1.0453e+00
+Pressure on right wall: 1.0677e+00
+Average pressure: 1.0565e+00
+
+--- PRESSURE 3 ---
+
+NA = 100; NB = NA; N = NA + NB   # number of particles
+density = 10                     # number density
+L = float(N / density)           # box length
+E = 1000.0                       # total energy
+mA, mB = 1.0, 2.0                # masses of species A and B
+kB = 1.0                         # Boltzmann constant in simulation units
+
+Pressure on left wall: 1.0042e+02
+Pressure on right wall: 9.9972e+01
+Average pressure: 1.0019e+02
+
+--- PRESSURE 4 ---
+
+NA = 100; NB = NA; N = NA + NB   # number of particles
+density = 1.0                    # number density
+L = float(N / density)           # box length
+E = 10000.0                      # total energy
+mA, mB = 1.0, 2.0                # masses of species A and B
+kB = 1.0                         # Boltzmann constant in simulation units
+
+Pressure on left wall: 1.0042e+02
+Pressure on right wall: 9.9972e+01
+Average pressure: 1.0019e+02
+
