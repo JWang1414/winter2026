@@ -15,19 +15,20 @@ samples_B = np.load('temp_images/samples_B.npy')
 # Combine samples into a list for processing
 samples_list = [np.array(samples_A), np.array(samples_B)]
 
-# Normalize the samples
-for i in range(len(samples_list)):
-    samples_list[i] = samples_list[i] / np.linalg.norm(samples_list[i])
-
 # Plot the histograms and fitted curves
 plt.figure(figsize=(12, 5))
 colors = ['blue', 'orange']
 labels = ['Species A', 'Species B']
 
 for i, samples in enumerate(samples_list):
-    # Histogram
+    # Compute histogram bins
     counts, bin_edges = np.histogram(samples, bins=30, density=True)
     bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
+
+    # Normalize the histogram
+    counts = counts / np.sum(counts * np.diff(bin_edges))
+
+    # Plot histogram
     plt.subplot(1, 2, i + 1)
     plt.hist(samples, bins=30, density=True, alpha=0.6, color=colors[i], label='Histogram')
 
@@ -41,18 +42,20 @@ for i, samples in enumerate(samples_list):
     x_fit = np.linspace(min(samples), max(samples), 200)
     y_fit = gaussian(x_fit, mu_fit, sigma_fit)
 
+    # Plot the fitted curve
+    plt.plot(x_fit, y_fit, color='red', linewidth=2, label='Fitted Gaussian')
+
     # Determine the quality of the fit
     pcov = np.sqrt(np.diag(pcov))
     residuals = counts - gaussian(bin_centers, *popt)
     chi_squared = np.sum((residuals ** 2) / gaussian(bin_centers, *popt))
     dof = len(bin_centers) - len(popt)
+
+    # Print fit results
     print(f'Fit results for {labels[i]}: mu = {mu_fit:.4e}, sigma = {sigma_fit:.4e}')
     print(f"Chi-squared = {chi_squared:.4f}, dof = {dof:.4f}, chi-squared/dof = {chi_squared/dof:.4f}")
     print(f"Parameter uncertainties: mu = {pcov[0]:.4e}, sigma = {pcov[1]:.4e}")
     print()
-
-    # Plot the fitted curve
-    plt.plot(x_fit, y_fit, color='red', linewidth=2, label='Fitted Gaussian')
 
     # Labels and title
     plt.title(f'Velocity Distribution of {labels[i]}')
@@ -67,10 +70,10 @@ plt.tight_layout()
 plt.show()
 
 ### Printed output from one sample:
-# Fit results for Species A: mu = 5.0182e-06, sigma = 2.5171e-03
-# Chi-squared = 0.4405, dof = 28.0000, chi-squared/dof = 0.0157
-# Parameter uncertainties: mu = 5.7564e-06, sigma = 4.7001e-06
+# Fit results for Species A: mu = 6.3566e-03, sigma = 3.1884e+00
+# Chi-squared = 0.0003, dof = 28.0000, chi-squared/dof = 0.0000
+# Parameter uncertainties: mu = 7.2917e-03, sigma = 5.9537e-03
 
-# Fit results for Species B: mu = 7.2971e-06, sigma = 2.5160e-03
-# Chi-squared = 0.3657, dof = 28.0000, chi-squared/dof = 0.0131
-# Parameter uncertainties: mu = 5.9599e-06, sigma = 4.8663e-06
+# Fit results for Species B: mu = 6.5215e-03, sigma = 2.2485e+00
+# Chi-squared = 0.0004, dof = 28.0000, chi-squared/dof = 0.0000
+# Parameter uncertainties: mu = 5.3264e-03, sigma = 4.3490e-03
