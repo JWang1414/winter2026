@@ -5,6 +5,7 @@
 import numpy as np                # Fundamental package for numerical computations
 import matplotlib.pyplot as plt   # Plotting library
 import heapq                      # Priority queue implementation
+from scipy.optimize import curve_fit
 
 # --------------------------------- #
 # Initialization of physical system #
@@ -129,8 +130,8 @@ T_burn = None; processed = 0
 # plt.ylabel('Density')
 # plt.tight_layout()
 # plt.grid()
-# plt.savefig('temp_images/initial_velocity_distribution_random2.png')
-# plt.show()
+# plt.savefig('temp_images/initial_velocity_distribution_random3.png')
+# # plt.show()
 # exit()
 
 while processed < num_events:
@@ -179,3 +180,7 @@ while processed < num_events:
 
     if processed % verbosity == 0:
         print(f"Processed {processed:,} events...")
+
+# Save samples_A and samples_B to files
+np.save('temp_images/samples_A.npy', np.array(samples_A))
+np.save('temp_images/samples_B.npy', np.array(samples_B))
