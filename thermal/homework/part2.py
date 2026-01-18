@@ -191,5 +191,5 @@ print(f"Pressure on right wall: {pressure_right:.4e}")
 print(f"Average pressure: {pressure_avg:.4e}\n")
 
 # Save samples_A and samples_B to files
-np.save('temp_images/samples_A.npy', np.array(samples_A))
-np.save('temp_images/samples_B.npy', np.array(samples_B))
+np.save(f"temp_images/samples_A.npy", np.array(samples_A))
+np.save(f"temp_images/samples_B.npy", np.array(samples_B))
