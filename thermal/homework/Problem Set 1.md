@@ -62,3 +62,21 @@ The $\chi^{2}$ values are incredibly small, indicating a heavily over-fit functi
 
 - I didn't plot the residuals. This is a 2 mark question, surely they don't give a shit?
 # Question 9
+Ideal gas law for reference:
+$$
+PV=nRT
+$$
+Where $P$ is pressure, $V$ is volume, $n$ is the number of moles, $R$ is the ideal gas constant, and $T$ is temperature.
+
+- Alter the values of $m_{A}$ and $m_{B}$, ideally by orders of magnitude
+	- Compute the variance using the fit function used in question 8.
+	- Also have to alter $E$ and $N$
+- This will probably take a while because of all the waiting
+# Question 10
+- Computed the impulse and momentum according to the $2mv$ rule we learned in class
+- Determined the pressure on the wall assuming the area of the wall was 1
+
+How does it scale with $N$, $L$, and $E$? Cast your answer as a relation between pressure, energy, and density.
+- The answer to this, in combination with the previous question is probably the ideal gas law
+
+TODO: Complete question 9 and 10
