@@ -58,6 +58,8 @@ Supporting this claim is the fact that $\mu$ is very small for samples A and B. 
 - Maybe it's because there's a lot of points clustered around the centre? Widening the peak? Doesn't look like this is the case though
 - Increasing the number of bins doesn't appear to remedy this issue
 
+The variance $\sigma$, however, has an incredibly small uncertainty. The uncertainty is several orders of magnitude smaller than the actual value.
+
 The $\chi^{2}$ values are incredibly small, indicating a heavily over-fit function. Despite this, there are still 28 degrees of freedom. This has likely arisen because the Gaussian curve flawlessly models the equilibrium state all particles eventually reach in a 1-D particle system.
 
 - I didn't plot the residuals. This is a 2 mark question, surely they don't give a shit?
@@ -68,15 +70,27 @@ PV=nRT
 $$
 Where $P$ is pressure, $V$ is volume, $n$ is the number of moles, $R$ is the ideal gas constant, and $T$ is temperature.
 
-- Alter the values of $m_{A}$ and $m_{B}$, ideally by orders of magnitude
-	- Compute the variance using the fit function used in question 8.
-	- Also have to alter $E$ and $N$
-- This will probably take a while because of all the waiting
+The variance appears to decrease as the mass of the particles increases
+- Wild differences between the two particles does not appear to have significant effects on the variance
+- In most samples, species B has double the mass of A, but in one species B has x10 the mass of A, but similar results were recorded 
+
+The variance appears to increase as the energy in the system increases
+
+The variance appears to decrease as the number of particles increases
 # Question 10
 - Computed the impulse and momentum according to the $2mv$ rule we learned in class
 - Determined the pressure on the wall assuming the area of the wall was 1
 
-How does it scale with $N$, $L$, and $E$? Cast your answer as a relation between pressure, energy, and density.
-- The answer to this, in combination with the previous question is probably the ideal gas law
+As the energy increases, the pressure inside increases
 
-TODO: Complete question 9 and 10
+As the density increases (so the box length decreases) the pressure inside increases
+
+As the number of particles increases, the pressure inside decreases
+- This doesn't make sense, as is the opposite of what should happen
+- Claude is telling me this makes sense (unreliable source, but I can't find anything else on the topic)
+
+An approximation of the pressure,
+$$
+P \propto \frac{E}{NL} \implies  PL=\frac{AE}{N}
+$$
+- The second version is made to look more similar to the ideal gas law
