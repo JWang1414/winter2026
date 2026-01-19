@@ -12,28 +12,44 @@ Assuming a perfectly elastic collision:
 $$
 v_{1} + v_{1}' = v_{2}+v_{2}'
 $$
-Then,
+Confining this problem along the axis parallel to $\vec{n}$, I obtain the system of equations,
+$$
+\begin{align}
+m_{1, \vec{n}}v_{1, \vec{n}} + m_{2, \vec{n}}v_{2, \vec{n}} &= m_{1, \vec{n}}v_{1, \vec{n}}' + m_{2, \vec{n}}v_{2, \vec{n}}' \\
+v_{1, \vec{n}} + v_{1, \vec{n}}' &= v_{2, \vec{n}}+v_{2, \vec{n}}'
+\end{align}
+$$
+For the remainder of this problem, because all the momentum transfer occurs along the $\vec{n}$ direction, I will suppress the dependence on $\vec{n}$. Re-arranging the second equation:
 $$
 v_{1}' = v_{2}+v_{2}' - v_{1}
 $$
-Substitute,
+Substitute this relation back into the first:
 $$
 m_{1}v_{1} + m_{2}v_{2} = m_{1}(v_{2}+v_{2}' - v_{1}) + m_{2}v_{2}'
 $$
-$$
-v_{1} + \frac{m_{2}}{m_{1}} v_{2} = v_{1}+v_{2}' - v_{1} + \frac{m_{2}}{m_{1}} v_{2}'
-$$
+Isolate for $v_{2}'$ to find:
 $$
 v_{2}' = \frac{m_{2}v_{2} - m_{1}(v_{2}-2v_{1})}{m_{1}+m_{2}} = v_{2} - \frac{2m_{1}}{m_{1}+m_{2}} (v_{2}-v_{1})
 $$
-Now solve for $v_{1}'$
+Now solve for $v_{1}'$ using this new expression for $v_{2}'$:
 $$
 v_{1}' = v_{2}+\left( v_{2} - \frac{2m_{1}}{m_{1}+m_{2}} (v_{2}-v_{1}) \right)  - v_{1} = v_{1} - \frac{2m_{2}}{m_{1}+m_{2}} (v_{1}-v_{2})
 $$
-- I have isolated so that these components are purely in the $\vec{n}$ direction
-- Since this is where all the momentum transfer is, I can assume the momentum and velocity in the perpendicular direction will stay identical. So, this problem has become a 1-D one
+In summary:
+$$
+v_{1, \vec{n}}' = v_{1, \vec{n}} - \frac{2m_{2, \vec{n}}}{m_{1, \vec{n}}+m_{2, \vec{n}}} (v_{1, \vec{n}}-v_{2, \vec{n}}) \qquad v_{2, \vec{n}}' = v_{2, \vec{n}} - \frac{2m_{1, \vec{n}}}{m_{1, \vec{n}}+m_{2, \vec{n}}} (v_{2, \vec{n}}-v_{1, \vec{n}})
+$$
+Where I have once again re-introduced the dependence on $\vec{n}$ in the final expressions.
 # Question 3
-I have already done this, just replace 1 and 2 with $i$ and $j$. Both of the previous problems can be solved in 1-D if you choose the right coordinates.
+Removing the $\vec{n}$ dependence from the result in Q1,
+$$
+\vec{v}' = \vec{v}
+$$
+Removing the $\vec{n}$ dependence from the result in Q2, and taking $1\to i$ and $2\to j$ I have,
+$$
+v_{i}' = v_{i} - \frac{2m_{j}}{m_{i}+m_{j}} (v_{i}-v_{j}) \qquad v_{j}' = v_{j} - \frac{2m_{i}}{m_{i}+m_{j}} (v_{j}-v_{i})
+$$
+As needed.
 # Question 4
 Based on lines 142 and 150, the velocities are updated in the functions `collide_pair` and `reflect_wall`
 # Question 5
@@ -91,6 +107,10 @@ As the number of particles increases, the pressure inside decreases
 
 An approximation of the pressure,
 $$
-P \propto \frac{E}{NL} \implies  PL=\frac{AE}{N}
+P \propto \frac{E}{NL} \implies  PL=c_{1} \frac{E}{N}
 $$
 - The second version is made to look more similar to the ideal gas law
+# Rough work
+$$
+P = \frac{J}{A(\Delta t)}
+$$
