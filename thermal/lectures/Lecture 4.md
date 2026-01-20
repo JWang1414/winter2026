@@ -17,6 +17,7 @@ Arising from this definition is the statistical definition of temperature:
 $$
 \frac{1}{T} = \left(  \frac{ \partial S }{ \partial E }  \right)_{\varepsilon \neq E}
 $$
+- I think the subscript indicates that the number of particles in the system is constant
 - We know this just because the original derivative has units of inverse temperature
 # Temperature as energy per particle
 Consider an ideal gas with total energy $E$, consisting of $N$identical point-like particles of mass $m$ that do not interact. A microstate compatible with $(N, e)$ is specified by the set of velocities $\{ v_{j} \}_{j=1,\dots,N}$under the constraint
