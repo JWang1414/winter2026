@@ -4,7 +4,8 @@ $$
 \frac{1}{c} \frac{ \partial I_{\nu} }{ \partial t } + \frac{ \partial I_{\nu} }{ \partial z } =0
 $$
 Lets consider a situation with a lab of area $A$, and width $\Delta z$. The intensity illuminating the slab is $I_{\nu}$ and the intensity leaving the slab is some $I_{\nu}+\Delta I$
-- INSERT IMAGE HERE
+![[Pasted image 20260120185645.png]]
+A diagram of the illumination on the slab
 
 Now lets try to pack the continuity equation provided to us. Well, the EM energy density is defined to be,
 $$
