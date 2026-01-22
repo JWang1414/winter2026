@@ -6,9 +6,9 @@ a(\nu) \approx \frac{\lambda^{2} A_{21} g_{2}}{8\pi g_{1}} \tilde{N}_{1} S(\nu)
 $$
 Where $a$ is the absorption coefficient and $\tilde{N}_{1}$ is the number of atoms per volume
 # Threshold of a Laser
-- **Insert image here**
-	- Should be a diagram of a laser highlighting the reflectivity and the output of the laser
-	- Each of the mirrors within a laser may suffer from some scattering, because they cannot be perfectly smooth
+![[Pasted image 20260122135348.png]]
+A diagram of our rudimentary model of a laser. The light in the cavity reflects to the left and right, at each reflection, some of the light will inevitably also scatter.
+
 For this laser, let us define the reflection and transmission coefficients $r$ and $t$. Then, assume that it is ideal such that $r+t=1$.
 
 The condition for gain to exceed the loss at the mirrors is,
@@ -44,8 +44,8 @@ Which is called the threshold population inversion.
 - Recall that $S(\nu)$ is the lineshape function
 # Model for a laser
 Recall our original model for a laser
-- **Insert image here**
-	- Diagram of the variables we defined in our laser. How we gain photons, lose atoms etc
+![[Pasted image 20260122135547.png]]
+Where the variables, sources of gain, and sources of loss are highlighted
 
 From continuity, we also know that,
 $$
