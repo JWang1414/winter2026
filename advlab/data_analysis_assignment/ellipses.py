@@ -123,11 +123,10 @@ fig, axs = plt.subplots(len(residual_list), sharex=True)
 # Plot residuals for each function
 for i, func in enumerate(residual_list.keys()):
     residuals = residual_list[func]
-    axs[i].errorbar(x_data, residuals, yerr=y_unc, fmt='o', label=f'Residuals of {func}')
+    axs[i].errorbar(x_data, residuals, yerr=y_unc, fmt='o', label=func)
 
     # Implement an axis-line, title, and legend for each of the subplots
     axs[i].axhline(0, color='red', linestyle='--')
-    axs[i].set_title(f"Residuals for {func}")
     axs[i].legend()
 
 # Labels
