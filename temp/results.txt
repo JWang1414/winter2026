@@ -1,17 +1,17 @@
 --- GAUSSIAN ---
-Optimal parameters: [119.04860409  25.47972845   4.48023278]
-Covariance matrix: [0.80779998 0.01750807 0.01078972]
-Chi-squared: 2239.2660026940403
-Reduced Chi-squared: 248.80733363267115
+Optimal parameters: [121.88591444  25.58644576   4.47786874]
+Covariance matrix: [1.41861551 0.01982495 0.01442201]
+Chi-squared: 1660.7295020409597
+Reduced Chi-squared: 184.5255002267733
 
 --- LOGNORMAL ---
-Optimal parameters: [5.50669537e+02 3.21300069e+00 2.05497626e-01]
-Covariance matrix: [2.81372640e+00 8.38948490e-04 5.38379766e-04]
-Chi-squared: 86.36968269673608
-Reduced Chi-squared: 9.596631410748452
+Optimal parameters: [5.41598161e+02 3.21284612e+00 2.06449972e-01]
+Covariance matrix: [4.47669944e+00 9.94329400e-04 7.22864683e-04]
+Chi-squared: 51.94777414719849
+Reduced Chi-squared: 5.771974905244276
 
 --- LAPLACIAN ---
-Optimal parameters: [171.63448234  26.26527472   3.35969119]
-Covariance matrix: [1.41619569 0.01896666 0.0134031 ]
-Chi-squared: 9315.135763734612
-Reduced Chi-squared: 1035.0150848594012
+Optimal parameters: [187.20453341  26.59897576   3.27243153]
+Covariance matrix: [2.86261602 0.02755861 0.0193556 ]
+Chi-squared: 5487.567577541667
+Reduced Chi-squared: 609.729730837963
