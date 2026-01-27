@@ -109,6 +109,15 @@ $$
 $$
 v^{2} = v_\text{ter}^{2} - \exp \left[ \frac{2gy}{v_\text{ter}^{2}} - \ln(v_\text{ter}^{2}-v_{0}^{2}) \right]
 $$
+- I have an algebra mistake somewhere I think. Finish this question later
+# Question 2
+---
+a.
+- Done in Python
+---
+b.
+Forward Euler has linear error
+- Well, I already knew this
 # Question 3
 Equations of motion:
 $$
