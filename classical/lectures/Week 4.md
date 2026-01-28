@@ -106,3 +106,35 @@ $$
 Z = \frac{\omega_{0}^{2}A_{f}}{\omega_{0}^{2}-\omega^{2}}
 $$
 By observation, the amplitude of oscillation will depend on the frequency of forcing.
+
+To determine the phase of oscillation, we consider the polar representation of $Z$
+$$
+Z(\omega) = A(\omega) e^{ -i\delta }
+$$
+Since $A(\omega)$ must be real and positive, this is necessarily
+$$
+A(\omega) = \frac{\omega_{0}^{2}A_{f}}{\left| \omega_{0}^{2}-\omega^{2} \right| } \qquad e^{ -i\delta } = \text{sign}(\omega_{0}^{2}-\omega^{2})
+$$
+In the case $\omega<\omega_{0}$ we have $\delta=0$. The response is therefore,
+$$
+x(t) = \mathrm{Re}\{ Z \} = A(\omega) \cos(\omega t)
+$$
+In the limit where $\omega /\omega_{0}\to 0$ we have,
+$$
+\delta=0 \qquad A /A_{f} \to  1
+$$
+Physically, this means that when the engine moves very slowly, the spring neither compresses nor stretches.
+
+In the case $\omega>\omega_{0}$ we have $\text{sign}(\omega_{0}^{2}-\omega^{2})=e^{ -i\delta }=-1$ and so $\delta=\pi$. The response is therefore,
+$$
+x(t) = \mathrm{Re}\{ Z \} = A(\omega)\cos(\omega t-\pi)
+$$
+And so the engine and mass oscillate at the same frequency, but with opposite phase.
+
+In the limit where $\omega /\omega_{0}\to \infty$ we have $A /A_{f} =0$ so the mass hardly moves in this case.
+
+The case where $\omega=\omega_{0}$ is called resonance. In this case we have $A(\omega)\to \infty$ and so the amplitude endlessly increases to infinity
+- Imagine this as the driving force repeatedly supplying energy to the system
+- The solution to the ODE changes, but we aren't required to know it
+![[Pasted image 20260128130945.png]]
+Here is a plot of the amplitude of the mass oscillating with a resonant driving force
