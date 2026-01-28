@@ -72,5 +72,11 @@ Where $R=kN_{A}$ is called the ideal gas constant.
 # Other thermodynamic quantities
 The internal energy is obtained from:
 $$
+E = -\frac{ \partial \ln \mathcal{Z}_{N} }{ \partial \beta } = \frac{d}{2} NkT
+$$
+Which tells us that the energy per particle is proportional to temperature, as we would expect.
 
+The Sackur-Tetrode equation is:
+$$
+S = - \frac{ \partial F }{ \partial T } = Nk \left[ \ln\left( \frac{V}{N\lambda^{d}_{dB}} \right) - \frac{d+2}{2} \right]
 $$
