@@ -57,3 +57,20 @@ The many-body partition function and the Helmholtz free energy is:
 $$
 \mathcal{Z}_{N} = \frac{1}{N!} \left( \frac{V}{\lambda^{d}_{dB}} \right)^{N} \qquad F=-kT\ln \mathcal{Z}_{N} = -NkT \left[ \ln\left( \frac{V}{N\lambda^{d}_{dB}} \right) -1 \right]
 $$
+# Ideal gas law
+The pressure directly follows from the Helmholtz free energy
+$$
+P = - \frac{ \partial F }{ \partial V } = \frac{NkT}{V} \implies  PV=NkT
+$$
+Which is the familiar law of ideal gases.
+
+Other forms of the equation include using the density $n=N /V$ or the molar concentration $n_\text{mole}=N /N_{A}$ as opposed to the number $N$. The other versions are:
+$$
+P=nRT \qquad PV=n_\text{mole}RT
+$$
+Where $R=kN_{A}$ is called the ideal gas constant.
+# Other thermodynamic quantities
+The internal energy is obtained from:
+$$
+
+$$
