@@ -1,11 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-plt.rcParams["figure.dpi"] = 150  # for crispier figures
-plt.rcParams["font.size"] = "12"
-
 # Configuration
-SAVE_FILES = False
+SAVE_FILES = True
 SAVE_PATH = "temp/"
 SKIP_NUMERICAL = True
 DEBUG = False
@@ -43,7 +40,7 @@ errors = []  # empty list where we will record the errors
 dt_values = []  # empty list where we will record the time steps
 
 # Compute forward Euler with a different number of time steps
-for nsteps in range(5, 51, 5):
+for nsteps in range(5, 51, 3):
     time = np.linspace(0.0, tground, nsteps)  # time array
     dt = time[1] - time[0]  # time step
     dt_values.append(dt)
@@ -67,7 +64,6 @@ for nsteps in range(5, 51, 5):
         continue
 
     # Plot the numerical solution
-    plt.figure(figsize=(3.2, 2.4))
     plt.plot(t_up, v_up, "r", label="analytical")
     plt.plot(t_down, v_down, "r")
     plt.plot(time, v_num, "+:", label="numerical")
@@ -83,6 +79,7 @@ for nsteps in range(5, 51, 5):
     # Save/show plots
     if SAVE_FILES:
         plt.savefig(SAVE_PATH + "friction_{}nsteps.png".format(nsteps))
+        plt.clf()
     else:
         plt.show()
 
@@ -98,5 +95,6 @@ plt.grid()
 # Save/show plots
 if SAVE_FILES:
     plt.savefig(SAVE_PATH + "errors.png")
+    plt.clf()
 else:
     plt.show()

@@ -1,7 +1,7 @@
 # Question 1
 ---
 a.
-The drag force and gravity must be equal so:
+Equalize gravity and friction:
 $$
 cv^{2} = mg \implies  v^{2} = \frac{mg}{c}
 $$
@@ -27,13 +27,15 @@ Adapt this quantity to the coordinate system where $g$ is negative to obtain:
 $$
 \dot{v} = -g \left[ 1+ \left( \frac{v}{v_\text{ter}} \right)^{2} \right]
 $$
+As needed.
+
 ---
 c.
 First, re-arrange the equation to find:
 $$
 \frac{dv}{dt} \left[ 1 + \left( \frac{v}{v_\text{ter}} \right)^{2} \right] ^{-1} =-g
 $$
-Use substitution and integrate both sides:
+Integrate both sides, using substitution on the left-hand side:
 $$
 \int_{v_{0}}^{v} \left[ 1 + \left( \frac{v}{v_\text{ter}} \right)^{2} \right] ^{-1} \, dv = -g \int dt
 $$
@@ -75,7 +77,7 @@ y(v) = \frac{v_\text{ter}^{2}}{2g} \ln\left( \frac{v_\text{ter}^{2}+v_{0}^{2}}{v
 $$
 ---
 d.
-The baseball will reach maximum height when $y=0$. According to $y(v)$ this is:
+The baseball will reach maximum height when $v=0$. According to $y(v)$ this is:
 $$
 y(v) = \frac{v_\text{ter}^{2}}{2g} \ln\left( \frac{v_\text{ter}^{2}+v_{0}^{2}}{v_\text{ter}^{2}} \right)
 $$
@@ -83,33 +85,69 @@ As needed.
 
 ---
 e.
-Downwards, gravity and drag point in the opposite directions:
+Drag and gravity now point in opposite directions
 $$
-m\ddot{x} = mg-cv^{2}
+m\ddot{x} = mg - cv^{2}
 $$
-
+Re-arrange to find an expression for $\dot{v}$:
 $$
-\dot{v} = g - \frac{cv^{2}}{m} = g\left[ 1 - \left( \frac{v}{v_\text{ter}} \right)^{2} \right]
+\dot{v} = g\left( 1 - \left( \frac{v}{v_\text{ter}} \right)^{2} \right)
 $$
+Align the direction so that $g$ is negative:
 $$
-\frac{dv}{dy} v = g\left[ 1 - \left( \frac{v}{v_\text{ter}} \right)^{2} \right]
+\dot{v} = -g \left[ 1-\left( \frac{v}{v_\text{ter}} \right)^{2} \right]
 $$
+Apply the chain rule:
 $$
-\int_{v_{0}}^{v} \frac{v}{1 - (v /v_\text{ter})^{2}} \, dv = g \int dy
+\frac{dv}{dt} = \frac{dv}{dy} \frac{dy}{dt} = v \frac{dv}{dy} = -g \left[ 1-\left( \frac{v}{v_\text{ter}} \right)^{2} \right]
 $$
+Integrate both sides:
 $$
--\frac{v_\text{ter}^{2}}{2} \left[ \ln(v_\text{ter}^{2}-v^{2}) + \ln(v_\text{ter}^{2}-v_{0}^{2}) \right] = gy
+\int_{v_{0}}^{v} \frac{v}{1-(v /v_\text{ter})^{2}} \, dv = -g \int dy
 $$
+The result is:
 $$
-\ln(v_\text{ter}^{2}-v^{2}) + \ln(v_\text{ter}^{2}-v_{0}^{2}) = \frac{2gy}{v_\text{ter}^{2}}
+-\frac{v_\text{ter}^{2}}{2} (\ln \left| v_\text{ter}^{2}-v^{2} \right| - \ln \left| v_\text{ter}^{2}-v_{0}^{2} \right|  ) = -gy
 $$
+After some algebra:
 $$
-\ln(v_\text{ter}^{2}-v^{2}) = \frac{2gy}{v_\text{ter}^{2}} - \ln(v_\text{ter}^{2}-v_{0}^{2})
+\ln \left| v_\text{ter}^{2}-v^{2} \right| = \frac{2gy}{v_\text{ter}^{2}} + \ln \left| v_\text{ter}^{2}-v_{0}^{2} \right|
 $$
+Simplify the absolute value by making the assumption that $v^{2}\leq v_\text{ter}^{2}$:
 $$
-v^{2} = v_\text{ter}^{2} - \exp \left[ \frac{2gy}{v_\text{ter}^{2}} - \ln(v_\text{ter}^{2}-v_{0}^{2}) \right]
+v^{2} - v_\text{ter}^{2} = \exp \left[ \frac{2gy}{v_\text{ter}^{2}} + \ln \left| v_\text{ter}^{2}-v_{0}^{2} \right| \right]
 $$
-- I have an algebra mistake somewhere I think. Finish this question later
+Solve for $v$:
+$$
+v(y) = \sqrt{ v_\text{ter}^{2} + \exp \left[ \frac{2gy}{v_\text{ter}^{2}} + \ln \left| v_\text{ter}^{2}-v_{0}^{2} \right| \right] }
+$$
+---
+f.
+Instead of using the final equation, I will instead substitute $y_\text{max}$ into this midpoint:
+$$
+\frac{v_\text{ter}^{2}}{2} (\ln \left| v_\text{ter}^{2}-v^{2} \right| - \ln \left| v_\text{ter}^{2}-v_{0}^{2} \right|  ) = gy
+$$
+Which yields:
+$$
+\frac{v_\text{ter}^{2}}{2} (\ln \left| v_\text{ter}^{2}-v^{2} \right| - \ln \left| v_\text{ter}^{2}-v_{0}^{2} \right|  ) = -\frac{v_\text{ter}^{2}}{2} \ln\left( \frac{v_\text{ter}^{2}+v_{0}^{2}}{v_\text{ter}^{2}} \right)
+$$
+Apply the properties of logarithms to simplify the expression into:
+$$
+\ln\left( \frac{\left| v_\text{ter}^{2}-v^{2} \right| }{\left| v_\text{ter}^{2}-v_{0}^{2} \right| } \right) = \ln \left( \frac{v_\text{ter}^{2}}{v_\text{ter}^{2}+v_{0}^{2}} \right)
+$$
+If I assume that $v_{0}<v_\text{ter}$ and $v<v_\text{ter}$ I obtain:
+$$
+\frac{v^{2}-v_\text{ter}^{2}}{v_{0}^{2}-v_\text{ter}^{2}} = \frac{v_\text{ter}^{2}}{v_\text{ter}^{2}+v_{0}^{2}}
+$$
+Re-arrange:
+$$
+v^{2} = \frac{v_\text{ter}^{2}}{v_\text{ter}^{2}+v_{0}^{2}} (v_{0}^{2}-v_\text{ter}^{2}) + v_\text{ter}^{2} = \frac{2v_\text{ter}^{2}v_{0}^{2}}{v_\text{ter}^{2}+v_{0}^{2}}
+$$
+Aligning the directions, the velocity when the ball hits the ground is,
+$$
+v_{g} = - \frac{\sqrt{ 2 }v_\text{ter}^{2}v_{0}^{2}}{v_\text{ter}^{2}+v_{0}^{2}}
+$$
+- This is a factor $\sqrt{ 2 }$ off the correct answer. Not sure why
 # Question 2
 ---
 a.
@@ -119,7 +157,7 @@ b.
 Forward Euler has linear error
 - Well, I already knew this
 # Question 3
-Equations of motion:
+In polar coordinates, Newton's 2nd law states:
 $$
 \begin{align}
 F_{r} & = m (\ddot{r} - r \dot{\theta}^{2}) \\
@@ -148,11 +186,11 @@ Where $\omega=\dot{\theta}$. Integrate both sides:
 $$
 \frac{1}{r} \frac{dr}{dt} = \frac{1}{\omega} \frac{d\omega}{dt} \implies  \int_{r_{0}}^{r} \frac{1}{r} \, dr = \int_{\omega_{0}}^{\omega} \frac{1}{\omega} \, d\omega
 $$
-Result:
+The result is:
 $$
 \ln\left( \frac{r}{r_{0}} \right) = \ln\left( \frac{\omega}{\omega_{0}} \right) \implies  \frac{r}{r_{0}} = \frac{\omega}{\omega_{0}}
 $$
-Solve for $\omega$
+Solve for $\omega$:
 $$
 \dot{\theta} = \omega = \frac{\omega_{0}}{r_{0}} r
 $$
@@ -160,17 +198,13 @@ According to the first equation
 $$
 \ddot{r} = \frac{dv}{dt} = \frac{dv}{dr} \frac{dr}{dt} = v \frac{dv}{dr} = r \dot{\theta}^{2} = r \left( \frac{\omega_{0}}{r_{0}}r \right)^{2} = \left( \frac{\omega_{0}}{r_{0}} \right)^{2} r^{3}
 $$
-Where $v$ is the radial velocity, in this case. The above yields the ODE:
+Where $v$ is the radial velocity. The above yields the ODE:
 $$
 v \frac{dv}{dr} = \left( \frac{\omega_{0}}{r_{0}} \right)^{2} r^{3}
 $$
 Solve using separation of variables by integrating both sides,
 $$
-\int_{v_{0}}^{v} v \, dv = \left( \frac{\omega_{0}}{r_{0}} \right)^{2} \int_{r_{0}}^{r} r^{3} \, dr
-$$
-Result:
-$$
-v^{2} - v_{0}^{2} = \left( \frac{\omega_{0}}{r_{0}} \right)^{2} (r^{4}-r_{0}^{4})
+\int_{v_{0}}^{v} v \, dv = \left( \frac{\omega_{0}}{r_{0}} \right)^{2} \int_{r_{0}}^{r} r^{3} \, dr \implies  v^{2} - v_{0}^{2} = \left( \frac{\omega_{0}}{r_{0}} \right)^{2} (r^{4}-r_{0}^{4})
 $$
 Re-arrange,
 $$
@@ -185,7 +219,7 @@ As needed.
 # Question 4
 ---
 a.
-Recall that for two commensurate frequencies, if,
+Recall from lecture that for two commensurate frequencies, if,
 $$
 r = \frac{\omega_{1}}{\omega_{2}} = \frac{m}{n}
 $$
@@ -201,13 +235,13 @@ Therefore,
 $$
 r = \frac{25}{28} = \frac{m}{n}
 $$
-Compute the period:
+And the period is:
 $$
 nT_{2} = 28 \left( \frac{2\pi}{7} \right) = 8\pi
 $$
 ---
 b.
-Compute the velocity of the two functions
+The velocity of the two vibrations are:
 $$
 v_{1} = 3 \frac{d}{dt} \cos\left( \frac{25}{4}t + \frac{\pi}{5} \right) = -\frac{75}{4} \sin\left( \frac{25}{4}t+\frac{\pi}{5} \right)
 $$
@@ -237,7 +271,7 @@ And so the above is equivalent to:
 $$
 z = \left( 3-\frac{5i}{2} \right) e^{ i\omega t } + \left( 3+\frac{5i}{2} \right) e^{ -i\omega t } = \mathrm{Re}\left\{  2\left( 3-\frac{5i}{2} \right) e^{ i\omega t }  \right\}
 $$
-In conclude:
+I conclude:
 $$
 A = 2\left( 3-\frac{5i}{2} \right) \qquad \phi=0
 $$
