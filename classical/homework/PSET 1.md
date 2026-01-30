@@ -215,7 +215,28 @@ $$
 A = \left( \frac{\omega_{0}}{r_{0}} \right)^{2} \qquad B = v_{0}^{2} - \omega_{0}^{2} r_{0}^{2}
 $$
 As needed.
-- Finish this question later
+
+Furthermore, by definition, we have,
+$$
+\dot{r} = \frac{dr}{dt}
+$$
+Using separation of variables, and integrating both sides,
+$$
+\int_{t_{0}}^{t} dt = \int_{r_{0}}^{r} \frac{dr'}{\dot{r}'}
+$$
+We are interested in the limit where $r\to \infty$ so this becomes,
+$$
+\Delta t = \int_{r_{0}}^{\infty} \frac{dr}{\dot{r}} = \int_{r_{0}}^{\infty}  \left[ \left( \frac{\omega_{0}}{r_{0}} \right)^{2} r^{4} - \omega_{0}^{2}r_{0}^{2} + v_{0}^{2} \right]^{-1/2}  \, dr
+$$
+Where I have chosen the positive branch of $\dot{r}$ since we assume $\dot{r}>0$, and denoted $\Delta t=t-t_{0}$. In the limit where $r\to \infty$ the expression within the integral is approximately equal to,
+$$
+\left[ \left( \frac{\omega_{0}}{r_{0}} \right)^{2} r^{4} - \omega_{0}^{2}r_{0}^{2} + v_{0}^{2} \right]^{-1/2} \approx \left[ \left( \frac{\omega_{0}}{r_{0}} \right)^{2}r^{4} \right] ^{-1/2} = \frac{r_{0}}{\omega_{0}} \frac{1}{r^{2}}
+$$
+Since $B=v_{0}^{2}-\omega_{0}^{2}r_{0}^{2}$ is just a constant. Therefore, the amount of time taken to reach $r\to \infty$ is:
+$$
+\Delta t \approx \frac{r_{0}}{\omega_{0}} \int_{r_{0}}^{\infty} \frac{1}{r^{2}} \, dr = \frac{1}{\omega_{0}}
+$$
+And therefore the amount of time $\Delta t$ to reach $r\to \infty$ is finite, as needed.
 # Question 4
 ---
 a.
