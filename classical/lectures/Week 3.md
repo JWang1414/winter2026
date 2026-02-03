@@ -174,7 +174,7 @@ Define,
 $$
 A_{0} = 2 \lvert c e^{ (i\omega_{d}-\gamma)t } \rvert _{t=0} = 2\lvert c \rvert
 $$
-Which we call the initial position amplitude. Now, notice that we may define two points separated by one pseudo-period liek so:
+Which we call the initial position amplitude. Now, notice that we may define two points separated by one pseudo-period like so:
 $$
 A_{n} = A_{0} e^{ -\gamma nT_{d} } \qquad A_{n+t} = A_{0} e^{ -\gamma(n+1)T_{d} }
 $$

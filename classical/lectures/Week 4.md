@@ -69,7 +69,7 @@ v(t)=0 \implies  t=\gamma ^{-1}
 $$
 Substitute into $x(t)$ to find the maximum displacement:
 $$
-x(\gamma ^{-1}) = \frac{v_{0}}{\gamma} e^{ ^{-1} } \approx 3.6 \text{cm}
+x(\gamma ^{-1}) = \frac{v_{0}}{\gamma e} \approx 3.6 \text{cm}
 $$
 ---
 # Driving an undamped harmonic oscillator
