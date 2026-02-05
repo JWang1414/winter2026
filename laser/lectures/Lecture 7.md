@@ -56,9 +56,7 @@ $$
 $$
 Which tells us something very similar: If we want there to be more atoms in the higher level, we need our pumping to beat out the decay.
 
-- **There's a missing note here**
-
-What $P$ is required to provide $\bar{N}_{2}-\bar{N}_{1}=\Delta N_{tot}$?
+The threshold with finite cavity output coupling requires $\Delta N_{tot}$. What $P$ is required to provide $\bar{N}_{2}-\bar{N}_{1}=\Delta N_{tot}$?
 $$
 P_{t} = \Gamma_{21} \frac{N_\text{tot} + \Delta N_\text{tot}}{N_\text{tot}- \Delta N_\text{tot}} > \Gamma_{21}
 $$

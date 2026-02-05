@@ -52,7 +52,10 @@ Which tells us that,
 $$
 g(\nu) = g_{0}(\nu) \frac{1}{1+I /I_{sat, 4}} = g_{t} \implies  I = I_{sat, 4} \left( \frac{g_{0}(\nu) + g_{t}}{g_{t}} \right)
 $$
-- Insert plots here
-	- Two depictions of threshold gain. One is of small signal gain, and the other is of the gain clamping
-	- Gain clamping notes that, prior to the threshold gain, the actual gain increases before "clamping" and stopping
-	- Small signal gain is when we consider the solutions to the equations close to the threshold gain where the intensity is very weak
+![[Pasted image 20260204190759.png]]
+A depiction of the intensity under small-signal gain. Notice that when $g_{t}<0$ we naturally default to saying that the intensity is zero.
+
+![[Pasted image 20260204190924.png]]
+A plot showing gain clamping, where, prior to the threshold gain, the actual gain increases before clamping and stopping once LASE occurs.
+
+- Note that small-signal gain is when we consider the solutions to the equations close to the threshold gain where the intensity is very weak
