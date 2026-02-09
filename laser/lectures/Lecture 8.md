@@ -26,7 +26,7 @@ $\bar{N}_{2}$ is sometimes denoted as $\Delta \bar{N}$.
 
 The gain in this system will be something like,
 $$
-g(\nu) = g_{0}(\nu) = \frac{P+\Gamma}{P+\Gamma + \sigma I /h\nu} \equiv  g_{0}(\nu) \frac{1}{1+I /I_{sat, 4}}
+g(\nu) = g_{0}(\nu) \frac{P+\Gamma}{P+\Gamma + \sigma I /h\nu} \equiv  g_{0}(\nu) \frac{1}{1+I /I_{sat, 4}}
 $$
 Where,
 $$
@@ -50,7 +50,7 @@ $$
 $$
 Which tells us that,
 $$
-g(\nu) = g_{0}(\nu) \frac{1}{1+I /I_{sat, 4}} = g_{t} \implies  I = I_{sat, 4} \left( \frac{g_{0}(\nu) + g_{t}}{g_{t}} \right)
+g(\nu) = g_{0}(\nu) \frac{1}{1+I /I_{sat, 4}} = g_{t} \implies  I = I^{(+)} + I^{(-)} = I_{sat, 4} \left( \frac{g_{0}(\nu) + g_{t}}{g_{t}} \right)
 $$
 ![[Pasted image 20260204190759.png]]
 A depiction of the intensity under small-signal gain. Notice that when $g_{t}<0$ we naturally default to saying that the intensity is zero.

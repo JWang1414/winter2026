@@ -7,7 +7,7 @@ Lets consider a situation with a lab of area $A$, and width $\Delta z$. The inte
 ![[Pasted image 20260120185645.png]]
 A diagram of the illumination on the slab
 
-Now lets try to pack the continuity equation provided to us. Well, the EM energy density is defined to be,
+Now lets try to unpack the continuity equation provided to us. Well, the EM energy density is defined to be,
 $$
 u_{\nu} = \frac{I_{\nu}}{c} \implies  \frac{ \partial  }{ \partial t } (u_{\nu}\times \text{Volume}) = \frac{A(\Delta z)}{c} \frac{ \partial I_{\nu} }{ \partial t }
 $$
@@ -15,7 +15,7 @@ This is the change in energy density in the slab. Which we can equate to the cha
 $$
 A(\Delta I) = -\frac{A(\Delta z)}{c} \frac{ \partial I_{\nu} }{ \partial t }
 $$
-- Honestly, I have no idea where the $A(\Delta I)$ came from
+Where we have notated the change in intensity by $\Delta I$
 
 Divide both sides by $A(\Delta z)$ to find,
 $$
@@ -57,7 +57,7 @@ $$
 $$
 The portion on the right hand side:
 $$
-g(\nu) = \left[ \tilde{N}_{2} - \frac{g_{2}}{g_{1}} \tilde{N}_{1} \right]
+g(\nu) = \sigma(\nu) \left[ \tilde{N}_{2} - \frac{g_{2}}{g_{1}} \tilde{N}_{1} \right]
 $$
 Is called the gain coefficient. The negative version $a(\nu)=-g(\nu)$ is called the absorption coefficient.
 
