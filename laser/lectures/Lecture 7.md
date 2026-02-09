@@ -17,7 +17,7 @@ $$
 $$
 Now what happens if we add a third level? Well this is the level being pumped to, so
 $$
-\frac{dN_{2}}{dt} = PN_{1} - A_{32} N_{3} + \text{Sim. Emission} + \text{Absorption}
+\frac{dN_{3}}{dt} = PN_{1} - A_{32} N_{3} + \text{Sim. Emission} + \text{Absorption}
 $$
 However, these last two terms are proportional to the intensity between levels $3\to 2$ and $3\to 1$. This is quite similar to the two levels we have already considered, but because of the model of our laser, these terms will be very small. So, we will ignore them.
 
@@ -37,8 +37,23 @@ $$
 $$
 \frac{dN_{1}}{dt} = \frac{\sigma(\nu)}{h\nu} I_{\nu} (N_{2}-N_{1}) + A_{21}N_{2} - PN_{1}
 $$
-- **Fill in this section later**
+In the case when the laser is below or at threshold, the stimulated processes will be weak, therefore we approximate,
+$$
+\frac{dN_{2}}{dt} = -A_{21}N_{2} + PN_{1}
+$$
+$$
+\frac{dN_{1}}{dt} = - \frac{dN_{2}}{dt}
+$$
+Where we have removed the first term, the one that models the effects of stimulated emission.
 
+Now, in the steady state:
+$$
+\frac{dN_{1}}{dt} = - \frac{dN_{2}}{dt} =0
+$$
+Therefore,
+$$
+-A_{21} \bar{N}_{2} + P\bar{N}_{2} =0 \implies  \frac{\bar{N}_{2}}{\bar{N}_{1}} = \frac{P}{A_{21}}
+$$
 # Threshold condition
 Specifically the threshold condition for a 3 level scheme.
 
@@ -60,3 +75,4 @@ The threshold with finite cavity output coupling requires $\Delta N_{tot}$. What
 $$
 P_{t} = \Gamma_{21} \frac{N_\text{tot} + \Delta N_\text{tot}}{N_\text{tot}- \Delta N_\text{tot}} > \Gamma_{21}
 $$
+Which is called the threshold pumping rate.
