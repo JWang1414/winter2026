@@ -97,4 +97,48 @@ Example: Absorption lines
 
 The spectral peak in the absorption spectrum of an atom occurs at wavelength 500 nm, with FWHM $1.2\times 10^{-5}$. Model the excited atom as a damped oscillator and deduce its lifetime.
 
-- **Missing notes here**
+Recall that the lifetime of a damped oscillator is $1 /\gamma$, and that $\omega=2\pi c /\lambda$.
+
+We would like to solve for the lifetime with the identity: $\omega _\text{fwhh}=2\gamma$.
+
+Begin by solving for the frequency from the wavelength,
+$$
+\Delta \omega = \frac{ \partial \omega }{ \partial \lambda } \Delta \lambda = -\frac{2\pi c}{\lambda^{2}} \Delta \lambda
+$$
+Taking the absolute value, this tells us
+$$
+\omega _\text{fwhh} = \frac{2\pi c}{\lambda^{2}} \lambda _\text{fwhh}
+$$
+The lifetime is therefore,
+$$
+\tau = \frac{1}{\gamma} = \frac{2}{\omega _\text{fwhh}} = \frac{\lambda_{0}^{2}}{\pi c\lambda _\text{fwhh}} \approx 2.7 \times 10^{-8} \text{ seconds}
+$$
+Which corresponds to a $Q$-factor of roughly 92 million. Explaining why atomic clocks are so accurate.
+
+---
+# More general forcing terms
+## Superposition of sinusoids
+What if we now supposed the driving force is:
+$$
+F(t) = F_{01} \cos(\omega_{1}t) + F_{02} \cos(\omega_{2}t) + \dots
+$$
+Curiously, using the principle of superposition, the solution to this is the superposition of the solutions for each of the sinusoids,
+$$
+\begin{align}
+\ddot{x}_{1} + 2\gamma \dot{x}_{1} + \omega_{0}^{2} x_{1} & = \omega_{0}^{2} A_{f, 1} \cos(\omega_{1}t) \\
+\ddot{x}_{2} + 2\gamma \dot{x}_{2} + \omega_{0}^{2} x_{2} & = \omega_{0}^{2} A_{f, 2} \cos(\omega_{2}t)
+\end{align}
+$$
+- Remember to include the homogeneous solution too
+
+The solution here will be exactly what we are used to:
+$$
+x_{p} = A_{f, 1} a(\omega_{1}) \cos[\omega_{1}t-\delta(\omega_{1})] + A_{f, 2} a(\omega_{2}) \cos[\omega_{2}t-\delta(\omega_{2})] + \dots
+$$
+With the resonance curves,
+$$
+a(\omega) = \frac{\omega_{0}^{2}}{\sqrt{ (\omega_{0}^{2}-\omega^{2})^{2}+4\gamma^{2}\omega^{2} }} \qquad \delta(\omega) = \arctan\left( \frac{2\gamma \omega}{\omega_{0}^{2}-\omega^{2}} \right)
+$$
+As per usual.
+
+Something a bit more exotic than this might be a square wave, or a sawtooth wave. Well in this case we would need to apply Fourier's theorem, to decompose the periodic signal into a superposition of sines and cosines.
