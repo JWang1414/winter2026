@@ -125,4 +125,70 @@ model User {
 This file for example tells Prisma our database provider, what client we are using, and defines the database table we are going to use.
 
 It is possible to generate classes from the schema file using `npx prisma generate` and sync the schema to the database with `npx prisma migrate dev`.
+- It is good practice to include the `--name` option when migrating the database so that you have a version name or version number
 
+Prisma studio is a tool you can use to look at your database tables and manually modify data. You access it with `npx prisma studio`, and open it from localhost
+
+We add model definitions and fields from our diagrams via `schema.prisma`
+# Fields and Attributes
+Field scalar types include things like String, Boolean, Int etc. It is possible to make something "nullable" by adding a question mark to the end like: String?
+- Typically, we prefer to use a default value instead like the empty string or 0
+
+Field attributes include `@id`, `@default`, `@unique` which tell us things like the primary key, default value etc.
+# Foreign Key
+Establish relationships between models.
+
+1. One-to-Many relationships
+
+This is when multiple objects in model A belong to a single object in model B. Use the `[]` modifier on the many side, and `@relation` on the single side
+
+2. Many-to-Many relationships
+
+When multiple objects in model A relate to multiple objects in model B. This is typically done by joining tables together, however Prisma does this automatically for us. Both sides should use the `[]` modifier, and `@relation("join-table-name")`
+
+3. One-to-One relationships
+
+Most often appear in the case of inheritance. For example: a single user has a single profile. Notate this with a `?` on the parent side, and `@relation` on the child side.
+
+For one-to-one relationships, the foreign should be set to unique. In the case of the user and profile, this means that the userId is unique, because a profile can only be owned by a single user.
+# onDelete
+Defines what happens when we delete something.
+- Argument optionally taken in the `@relation` field
+- `@relation(fields: [authorId], references: [id], onDelete: Cascade)`
+
+There are a few delete options,
+1. Cascade
+	1. All related records are also deleted
+2. SetNull
+	1. Related records' foreign key field is set to null
+3. Restrict
+	1. Prevents the deletion of a record if there are related records
+4. NoAction
+	1. Do nothing
+# Migrations
+Generally speaking, we typically assume that the state of the schema file matches the database table. However, this is not always the case; two tables can go out of sync.
+
+Whenever our model changes, the database needs to migrate to the new state. This is done by applying the current application schema using DDL queries like CREATE, ALTER, TRUNCATE etc.
+
+Prisma does this in two steps, it first creates the migration, and then applies it.
+## Create Migration
+Prisma does this by generating a list of operations required to migrate to the new state. These are tracked inside the `prisma/migrations` folder.
+
+For example, we might have something like:
+```sql
+-- Rename the firstName field to givenName
+ALTER TABLE "User" RENAME COLUMN "firstName" TO "givenName";
+
+-- Create the new Profile table
+CREATE TABLE "Profile" (
+	"id" SERIAL PRIMARY KEY,
+	"bio" TEXT NOT NULL,
+	"userId" INTEGER NOT NULL UNIQUE,
+	FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE
+);
+```
+Which is a series of SQL commands Prisma is using the synchronize to the current state of the schema file.
+## Applying Migrations
+We can create and apply migrations using `npx prisma migrate dev`.
+
+Prisma knows how to tell is a migration has been applied by using a special table called `_prisma_migrations` which tracks the current migrations applied to the current database. The `migrate` command applies exclusively the migrations not currently in your table.
