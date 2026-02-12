@@ -49,4 +49,3 @@ And,
 $$
 A_{n} = \frac{4}{T} \int_{0}^{T /2} F(t) \cos(\omega_{n}t) \, dt
 $$
-- The rest of the lecture is composed of examples I should already be familiar with
