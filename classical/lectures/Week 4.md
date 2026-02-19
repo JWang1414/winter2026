@@ -171,7 +171,7 @@ Now, decompose $Z /A(\omega)$ into real and imaginary parts,
 $$
 \frac{Z}{A(\omega)} = e^{ -i\delta } = \cos\delta - i \sin\delta = \frac{p}{\sqrt{ p^{2}+q^{2} }} - i \frac{q}{\sqrt{ p^{2}+q^{2} }}
 $$
-So we havem
+So we have
 $$
 \cos\delta = \frac{p}{\sqrt{ p^{2}+q^{2} }}\qquad \sin\delta = \frac{q}{\sqrt{ p^{2}+q^{2} }}
 $$

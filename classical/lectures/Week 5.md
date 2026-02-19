@@ -61,7 +61,7 @@ Plot of the power a a function of $\omega$. It looks symmetrical, but this is on
 
 Note here that the full-width half-max of this curve is denoted $\omega _\text{fwhh}$, which is the "full-width half-height".
 
-To determine an expression for $\omega _\text{fwhh}$, we make the approximation that $\omega \approx \omega_{0}$. From this we havev,
+To determine an expression for $\omega _\text{fwhh}$, we make the approximation that $\omega \approx \omega_{0}$. From this we have,
 $$
 \left( \frac{\omega_{0}}{\omega} - \frac{\omega}{\omega_{0}} \right)^{2} \approx \frac{(\omega_{0}^{2}-\omega^{2})^{2}}{(\omega \omega_{0})^{2}}
 $$
