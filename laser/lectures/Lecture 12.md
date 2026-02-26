@@ -25,8 +25,8 @@ Among the solutions to the Helmholtz equations are spherical and plane waves,
 $$
 \text{Spherical wave} = \frac{A}{r} e^{ ikr } \qquad \text{Plane wave} = \mathcal{E}_{0} e^{ i\vec{k}\cdot \vec{r} }
 $$
-
-- **Insert images here, depicting the propagation of these two waves.**
+![[Pasted image 20260225193152.png]]
+A drawing of a spherical wave and plane wave.
 
 Neither of these look particularly like laser light, and so we will try to look for something like a plane wave:
 $$
@@ -34,7 +34,10 @@ $$
 $$
 Where we have defined the envelope function $\mathcal{E}_{0}$. This function should be responsible for limited the $x$ and $y$ components of the wave, so it appears more like a beam.
 
-- **Missing some notes here about the modulation of the envelope**
+In the envelop function, we have a slow variation on the $\lambda$ scale, mathematically defined to be,
+$$
+\left| \frac{ \partial \mathcal{E}_{0} }{ \partial z }  \right| \ll k \lvert \mathcal{E}_{0} \rvert \qquad \left| \frac{ \partial^{2}\mathcal{E}_{0} }{ \partial z^{2} }  \right| \ll k \left| \frac{ \partial \mathcal{E}_{0} }{ \partial k }  \right|
+$$
 
 To determine our envelope function $\mathcal{E}_{0}$, we substitute this model into the Helmholtz equation, and we get something like,
 $$
