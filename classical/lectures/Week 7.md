@@ -174,4 +174,107 @@ $$
 This is well defined so long as $U''>0$ and $U(x_{e})$ is a minimum.
 
 ---
+# General energy potentials: the view from phase space
+## Simple harmonic motion
+A spring has total energy,
+$$
+E = \frac{1}{2}mv^{2} + \frac{1}{2} kx^{2}
+$$
+Which describes an ellipse for all values $E>0$. The points $x=\pm \sqrt{ 2E /k }$ are the turning points, because $v=0$ and the particle turns around.
+![[Pasted image 20260226221454.png]]
+The energy in the SHO, plotted on a contour grid.
 
+The trajectory of the mass attached to the oscillating system goes along the constant lines of energy.
+
+We can see here that the oscillation occurs around the energy minimum, proceeding in a clockwise motion.
+## Projectile motion
+For projection motion we instead have,
+$$
+E = \frac{1}{2}mv^{2} + mgz
+$$
+Which results in the phase plot:
+![[Pasted image 20260226221703.png]]
+
+Notice how in this case, there is no energy minimum or oscillatory motion, the trajectories correspond to the rising and falling motion of vertically projected particles.
+# Non-linear pendulum
+The equation of motion for some non-linear pendulum is,
+$$
+\ddot{\theta} + \omega_{0}^{2} \sin \theta =0
+$$
+Where $\omega_{0}$ is the angular frequency in the weak-amplitude limit.
+
+The potential energy from the gravitational force is,
+$$
+U(\theta) = mgl(1-\cos\theta)
+$$
+Conservation of energy states,
+$$
+E = \frac{1}{2} ml^{2}\dot{\theta}^{2} + mgl(1-\cos\theta) = mgl(1-\cos\Theta)
+$$
+Where $\Theta$ is the maximum angle of oscillation.
+
+Using our previously derived equation to find the period of oscillation:
+$$
+T = \frac{2\sqrt{ 2 }}{\omega_{0}} \int_{0}^{\Theta} \frac{1}{\sqrt{ \cos\theta - \cos\Theta }}  \, d\theta
+$$
+And its energy can be shown to be,
+![[Pasted image 20260226222400.png]]
+
+There are two unique regimes that arise here. For $E<2mgl$, the energy of the oscillator is insufficient to roll, and the trajectory follows an ellipses, mirroring simple harmonic motion.
+
+For $E>2mgl$ we have rolling motion. The pendulum escapes the local potential well and "spins around" the pendulum.
+
+The boundary $E=2mgl$ is called the *separatrix*, it is highlighted in red. Furthermore, notice that the crossings in the separatrix occur at local maximum, unstable equilibriums.
+
+![[Pasted image 20260226224129.png]]
+The numerical integration of the non-linear pendulum using the Euler-Cromer method.
+
+The pendulum oscillates with some period $T$, but the oscillations aren't quite sinusoidal. The $\dot{\theta}$ curve in particular is a-sinusoidal.
+- Larger $\Theta$ will result in larger distortions
+
+![[Pasted image 20260226224318.png]]
+A numerical integration of the non-linear pendulum, visualized in a phase-plot using the Euler-Cromer method.
+
+The "diamond-like" shape of the phase plot shows us that the behaviour of SHM is gone.
+## Fourier analysis of the non-linear pendulum
+There is no clean analytical solution for the behaviour of a non-linear pendulum, and so we must instead use numerical analysis and FFTs to determine its behaviour.
+
+The resulting Fourier modes look like
+![[Pasted image 20260226225019.png]]
+So it is clear that the dominant mode coefficient is -2.5 radians.
+
+On a semi-log scale, the $\lvert A_{n} \rvert$s are:
+![[Pasted image 20260226225154.png]]
+Which helps to visualize the effects of the higher harmonics.
+
+A few things to notice here:
+- Mode 1 dominates
+- Odd-modes appear to decay by some constant factor
+- Even-modes are significantly smaller.
+## Non-linear effects create higher frequencies
+Our approach will be to represent non-linearities as weak perturbations to the linear oscillation.
+
+Use the Taylor series expansion of $\sin\theta$ to obtain,
+$$
+\ddot{\theta} + \omega_{0}^{2} \theta = -\frac{\omega_{0}^{2}}{6} \theta^{3}
+$$
+Where the equation has been re-arranged to depict the higher order approximations to sine as a forcing to the harmonic oscillator.
+
+For simplicity, lets just assume the oscillation of the forcing has $\omega=2\pi /T$ with a sinusoidal form. In this case the linear forcing will be proportional to,
+$$
+\cos ^{3}(\omega t) = \frac{\cos(3\omega t) + 3 \cos(\omega t)}{4}
+$$
+So the non-linear term includes both a $\omega$ frequency and a forcing oscillating at $3\omega$.
+- This term is of course comparatively very small
+
+If we then approximate the signal to be,
+$$
+\theta \approx \Theta_{1} \cos \omega t + \Theta_{3} \cos(3\omega t)
+$$
+And plug this back into the non-linear term $\omega_{0}^{2}\theta^{3} /6$ the result will have more frequencies. These frequencies have odd-numbered modes, and the coefficients corresponding to higher-numbered modes are progressively weaker.
+
+One other way to imagine this, is that if you add up more corrections to the Taylor series expansion,
+$$
+\sin\theta \approx \theta - \frac{\theta^{3}}{3!} + \frac{\theta^{5}}{5!} - \frac{\theta^{7}}{7!} + \dots
+$$
+You create more occasions to create more frequencies.
