@@ -231,3 +231,98 @@ y_\text{final} \\
 \end{bmatrix}
 $$
 Therefore $y_\text{final}=y_\text{initial}=0$ and the emitted light ray ends up back in the same position, but with $\alpha _\text{final}=\alpha _\text{initial}$
+# Question 3
+---
+a.
+$$
+E_\text{tot} = E_\text{in} \exp(ikx-2\pi i\nu t) - \sqrt{ R }E_\text{in} \exp(ik(2L-x) - 2\pi i\nu t) + R E_\text{in} \exp(ik(2L+x)-2\pi i\nu t)
+$$
+$$
+E_\text{tot} = E_\text{in} e^{ -2\pi i\nu t } \left[ e^{ ikx } - \sqrt{ R } e^{ ik(2L-x) } + R e^{ ik(2L+x) } - R^{3/2} e^{ ik(4L-x) } + \dots \right]
+$$
+Split into two series such that,
+$$
+E_\text{tot} = E_\text{right} + E_\text{left}
+$$
+$$
+E_\text{right} = E_\text{in} \exp(ikx-2\pi i\nu t) \left[ 1 + R e^{ 2ikL } + R^{2} e^{ 4ikL } + \dots \right]
+$$
+$$
+E_\text{left} = -\sqrt{ R }E_\text{in} \exp(ik(2L-x)-2\pi i\nu t) \left[ 1 + R e^{ 2ikL } + R^{2} e^{ 4ikL } + \dots \right]
+$$
+Use geometric series,
+$$
+E_\text{right} = \frac{E_\text{in} \exp(ikx-2\pi i\nu t)}{1-R e^{ 2ikL }}
+$$
+$$
+E_\text{left} = - \frac{\sqrt{ R }E_\text{in} \exp(ik(2L-x)-2\pi i\nu t)}{1-R e^{ 2ikL }}
+$$
+The total series is therefore,
+$$
+E_\text{tot} = \frac{E_\text{in}e^{ -2\pi i\nu t }}{1-R e^{ 2ikL }} \left[ e^{ ikx } - \sqrt{ R } e^{ ik(2L-x) } \right]
+$$
+The intensity is therefore,
+$$
+I = \frac{I_\text{in}e^{ -4\pi i\nu t }}{\left| 1-R e^{ 2ikL } \right|^{2} } \left| e^{ ikx } - \sqrt{ R } e^{ ik(2L-x) } \right| ^{2}
+$$
+$$
+\left| 1-R e^{ 2ikL } \right|^{2} = (1-R)^{2} + 4R \sin ^{2}(kL)
+$$
+$$
+\left| e^{ ikx } - \sqrt{ R } e^{ ik(2L-x) } \right| ^{2} = 1+R - \sqrt{ R } (e^{ 2ik(x-L) } + e^{ -2ik(x-L) })
+$$
+Euler's identity,
+$$
+1+R - 2\sqrt{ R } \cos(2k(x-L))
+$$
+Trig identity $\cos(2x)=1-2\sin ^{2}x$
+$$
+1+R - 2\sqrt{ R } \left[ 1-2\sin ^{2}(k(x-L)) \right] = (1-\sqrt{ R })^{2} + 4\sqrt{ R } \sin ^{2}(k(x-L))
+$$
+Substitute back in to find,
+$$
+I = \frac{I_\text{in} \left[ (1-\sqrt{ R })^{2} + 4\sqrt{ R } \sin ^{2}(k(x-L)) \right] }{(1-R)^{2} + 4R \sin ^{2}(kL)}
+$$
+Factor out $(1-\sqrt{ R })^{2}$ to find,
+$$
+I_\text{in} \frac{(1-\sqrt{ R })^{2}}{(1-R)^{2}+4R\sin ^{2}(kL)} \left[ 1 + \frac{4\sqrt{ R }}{(1-\sqrt{ R })^{2}} \sin ^{2}(k(x-L)) \right]
+$$
+Therefore,
+$$
+A = \frac{(1-\sqrt{ R })^{2} }{(1-R)^{2}+4R\sin ^{2}(kL)} \qquad B = - \frac{4\sqrt{ R }}{(1-\sqrt{ R })^{2}} \qquad \phi(x) = k(x-L)
+$$
+- This is so messy and honestly probably filled with mistakes but I do not have time to correct them
+---
+b.
+Interested in plotting:
+$$
+\frac{(1-\sqrt{ R })^{2}}{(1-R)^{2}+4R\sin ^{2}(kL)} \left[ 1 + \frac{4\sqrt{ R }}{(1-\sqrt{ R })^{2}} \sin ^{2}(kx-kL) \right]
+$$
+This plots look like this where I have arbitrarily chosen $kL=1$
+![[Pasted image 20260302224752.png]]
+$R=0.1$ is drawn in blue and $R=0.9$ is in green.
+
+---
+c.
+There appears to always be a standing wave in the cavity, as suggested by $\sin ^{2}\left[ k(x-L) \right]$.
+
+The energy density is defined to be,
+$$
+u_{\nu} = \frac{I_{\nu}}{c} \implies  \frac{u_\text{max} - u_\text{min}}{u_\text{max} + u_\text{min}} = \frac{I_\text{max}-I_\text{min}}{I_\text{max} + I_\text{min}}
+$$
+The minimum and maximum values of intensity are bounded by the values of $\sin ^{2}x$ which oscillates between 0 and 1.
+
+The minimum and maximum intensities are therefore,
+$$
+I_\text{max} = I_\text{in} \frac{(1-\sqrt{ R })^{2}}{(1-R)^{2}} \left[ 1 + \frac{4\sqrt{ R }}{(1-\sqrt{ R })^{2}}  \right]
+$$
+$$
+I_\text{min} = I_\text{in} \frac{(1-\sqrt{ R })^{2}}{(1-R)^{2}+4R}
+$$
+The visibility is therefore,
+$$
+\text{Visibility} = \frac{2\sqrt{ R }(R-\sqrt{ R }+1)}{-2R^{3/2}+R^{2} + 4R - 2 \sqrt{ R } + 1}
+$$
+---
+d.
+- I have no idea what to do for this question
