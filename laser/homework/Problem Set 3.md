@@ -182,7 +182,7 @@ The spatial magnification of this image is therefore,
 $$
 \text{Magnification} = \frac{y_\text{image}}{y_\text{obj}} = \frac{-y_\text{obj}-2x\alpha _\text{obj}}{y_\text{obj}} = -1-2x \frac{\alpha _\text{obj}}{y_\text{obj}}
 $$
-The second term here manifests as the blur in the resulting image. Since $B\neq 0$, the input and output are not conjugate planes and so the resulting image is unclear. However, the size of the image remains the same.
+I believe that, here, the $2x\alpha _\text{obj} /y_\text{obj}$ term manifests as a blur in the resulting image. The spatial magnification is -1, but the further away the object gets from $f$ the blurrier the image gets.
 
 - I don't even know if this is true
 - If this is right, wouldn't my definition of magnification be wrong? Because now I'm just not taking into account this additional term
@@ -234,56 +234,61 @@ Therefore $y_\text{final}=y_\text{initial}=0$ and the emitted light ray ends up 
 # Question 3
 ---
 a.
+The $\pi$ phase shift manifests as $e^{ i\pi }=-1$ and so swaps the sign of the wave after each reflection. Adding up each of the reflected waves, taking into account the reflection coefficient $R$ I get:
 $$
 E_\text{tot} = E_\text{in} \exp(ikx-2\pi i\nu t) - \sqrt{ R }E_\text{in} \exp(ik(2L-x) - 2\pi i\nu t) + R E_\text{in} \exp(ik(2L+x)-2\pi i\nu t)
 $$
+Factoring out the $E_\text{in}$ coefficient and time dependent part of the exponential,
 $$
 E_\text{tot} = E_\text{in} e^{ -2\pi i\nu t } \left[ e^{ ikx } - \sqrt{ R } e^{ ik(2L-x) } + R e^{ ik(2L+x) } - R^{3/2} e^{ ik(4L-x) } + \dots \right]
 $$
-Split into two series such that,
+The full series can now be split into a positive and negative series. Representing the rightward and leftward propagating waves:
 $$
 E_\text{tot} = E_\text{right} + E_\text{left}
 $$
+These two series can be written as:
 $$
-E_\text{right} = E_\text{in} \exp(ikx-2\pi i\nu t) \left[ 1 + R e^{ 2ikL } + R^{2} e^{ 4ikL } + \dots \right]
+\begin{align}
+E_\text{right} & = E_\text{in} \exp(ikx-2\pi i\nu t) \left[ 1 + R e^{ 2ikL } + R^{2} e^{ 4ikL } + \dots \right] \\
+E_\text{left} & = -\sqrt{ R }E_\text{in} \exp(ik(2L-x)-2\pi i\nu t) \left[ 1 + R e^{ 2ikL } + R^{2} e^{ 4ikL } + \dots \right]
+\end{align}
 $$
+Notice that both of these include a geometric series, and therefore can be simplified into:
 $$
-E_\text{left} = -\sqrt{ R }E_\text{in} \exp(ik(2L-x)-2\pi i\nu t) \left[ 1 + R e^{ 2ikL } + R^{2} e^{ 4ikL } + \dots \right]
+\begin{align}
+E_\text{right} & = \frac{E_\text{in} \exp(ikx-2\pi i\nu t)}{1-R e^{ 2ikL }} \\
+E_\text{left} & = - \frac{\sqrt{ R }E_\text{in} \exp(ik(2L-x)-2\pi i\nu t)}{1-R e^{ 2ikL }}
+\end{align}
 $$
-Use geometric series,
-$$
-E_\text{right} = \frac{E_\text{in} \exp(ikx-2\pi i\nu t)}{1-R e^{ 2ikL }}
-$$
-$$
-E_\text{left} = - \frac{\sqrt{ R }E_\text{in} \exp(ik(2L-x)-2\pi i\nu t)}{1-R e^{ 2ikL }}
-$$
-The total series is therefore,
+Adding up both of them, the total series is:
 $$
 E_\text{tot} = \frac{E_\text{in}e^{ -2\pi i\nu t }}{1-R e^{ 2ikL }} \left[ e^{ ikx } - \sqrt{ R } e^{ ik(2L-x) } \right]
 $$
-The intensity is therefore,
+The intensity is the absolute square of this quantity $\lvert E_\text{tot} \rvert^{2}$:
 $$
-I = \frac{I_\text{in}e^{ -4\pi i\nu t }}{\left| 1-R e^{ 2ikL } \right|^{2} } \left| e^{ ikx } - \sqrt{ R } e^{ ik(2L-x) } \right| ^{2}
+I = \frac{I_\text{in}}{\left| 1-R e^{ 2ikL } \right|^{2} } \left| e^{ ikx } - \sqrt{ R } e^{ ik(2L-x) } \right| ^{2}
 $$
+The term in the denominator is:
 $$
 \left| 1-R e^{ 2ikL } \right|^{2} = (1-R)^{2} + 4R \sin ^{2}(kL)
 $$
+The second term is:
 $$
 \left| e^{ ikx } - \sqrt{ R } e^{ ik(2L-x) } \right| ^{2} = 1+R - \sqrt{ R } (e^{ 2ik(x-L) } + e^{ -2ik(x-L) })
 $$
-Euler's identity,
+Use Euler's identity $e^{ ix }=\cos x+i \sin x$:
 $$
-1+R - 2\sqrt{ R } \cos(2k(x-L))
+= 1+R - 2\sqrt{ R } \cos(2k(x-L))
 $$
-Trig identity $\cos(2x)=1-2\sin ^{2}x$
+Use the trig identity $\cos(2x)=1-2\sin ^{2}x$
 $$
-1+R - 2\sqrt{ R } \left[ 1-2\sin ^{2}(k(x-L)) \right] = (1-\sqrt{ R })^{2} + 4\sqrt{ R } \sin ^{2}(k(x-L))
+= 1+R - 2\sqrt{ R } \left[ 1-2\sin ^{2}(k(x-L)) \right] = (1-\sqrt{ R })^{2} + 4\sqrt{ R } \sin ^{2}(k(x-L))
 $$
-Substitute back in to find,
+Substitute both back into find:
 $$
 I = \frac{I_\text{in} \left[ (1-\sqrt{ R })^{2} + 4\sqrt{ R } \sin ^{2}(k(x-L)) \right] }{(1-R)^{2} + 4R \sin ^{2}(kL)}
 $$
-Factor out $(1-\sqrt{ R })^{2}$ to find,
+Factor out $(1-\sqrt{ R })^{2}$ and re-arrange to obtain the desired form:
 $$
 I_\text{in} \frac{(1-\sqrt{ R })^{2}}{(1-R)^{2}+4R\sin ^{2}(kL)} \left[ 1 + \frac{4\sqrt{ R }}{(1-\sqrt{ R })^{2}} \sin ^{2}(k(x-L)) \right]
 $$
@@ -312,7 +317,7 @@ u_{\nu} = \frac{I_{\nu}}{c} \implies  \frac{u_\text{max} - u_\text{min}}{u_\text
 $$
 The minimum and maximum values of intensity are bounded by the values of $\sin ^{2}x$ which oscillates between 0 and 1.
 
-The minimum and maximum intensities are therefore,
+The minimum and maximum intensities are,
 $$
 I_\text{max} = I_\text{in} \frac{(1-\sqrt{ R })^{2}}{(1-R)^{2}} \left[ 1 + \frac{4\sqrt{ R }}{(1-\sqrt{ R })^{2}}  \right]
 $$
@@ -326,3 +331,4 @@ $$
 ---
 d.
 - I have no idea what to do for this question
+
