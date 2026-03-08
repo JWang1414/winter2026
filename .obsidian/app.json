@@ -1,5 +1,5 @@
 {
-  "attachmentFolderPath": "attachments",
+  "attachmentFolderPath": ".attachments",
   "promptDelete": false,
   "showLineNumber": true,
   "vimMode": true
