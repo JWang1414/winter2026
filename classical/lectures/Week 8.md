@@ -95,3 +95,121 @@ The Fourier spectrum shows us that the periodicity from the driving is still the
 There are a number of superharmonics present, most of the them aren't multiples of $\omega_{f}$. The subharmonics are very prevalent here, indicating that long-term motions, like drifts between potential wells, have taken much more importance.
 
 ![[Pasted image 20260307220612.png]]
+
+Chaos refers to the irregularity or unpredictability of certain motions. This unpredictability arises not because we do not understand the equations governing the system, but because the solutions cannot be predicted long in advance. This is called *deterministic chaos*.
+
+The defining feature of chaotic systems is their sensitivity to initial conditions.
+
+There is, however, a difference between *stochastic* and chaotic processes.
+![[Pasted image 20260308134639.png]]
+Notice that stochastic processes are not deterministic, because their behaviour is governed by random processes. Brownian motion, for example, is stochastic and unpredictable, but not chaotic.
+
+Traditionally there are two types of chaotic systems.
+- Hamiltonian systems, where mechanical energy is conserved. The system remembers its initial conditions, and the dynamics does not feature attractors.
+- Dissipative-driven systems. Dynamics have attractors, and the initial conditions are quickly forgotten after the transient phase.
+# Requirements for chaos in continuous time systems
+Recall that any system of ODEs can be written as a series of first-order ODEs for some defined $x_{n}$. In continuous time systems, there are two conditions for chaos:
+- $N\geq 3$
+	- So the system of equations needs at least 3 "levels"
+- The system is non-linear
+
+Note that these conditions are necessary, but not sufficient. Some non-linear waves have infinite phase-space dimensions, and yet remain predictable.
+## Requirements for chaos in the DDP
+The equation for motion we defined for the DDP is,
+$$
+\ddot{\theta} + 2\dot{\gamma}\theta + \omega_{0}^{2}\sin\theta = \omega_{0}^{2}\beta \cos(\omega_{f}t)
+$$
+This system can be re-written as,
+$$
+\begin{align}
+\dot{x}_{1} & = x_{2} \\
+\dot{x}_{2} & = -2\gamma x_{2} - \omega_{0}^{2}\sin x_{1} + \beta \omega_{0}^{2} \cos x_{3} \\
+\dot{x}_{3} & = \omega_{f}
+\end{align}
+$$
+Which is a system of three first order equations, and the 2nd one is non-linear. Confirming the possibility of chaos.
+
+Recall the system from last time, the one with $\beta=1.2$. We return to this problem, and integrate it for much longer periods of time. The phase plot turns into a mess of nothing, but the Poincare sections reveal a lot more about the behaviour of the system. Here are a few of them at different points in time:
+![[Pasted image 20260308141133.png]]
+![[Pasted image 20260308141157.png]]
+![[Pasted image 20260308141205.png]]
+These reveal to us that there is an attractor in the system, but is has a convoluted 3D structure. Furthermore, it is fuzzier than the limit cycles looking at in the previous lecture. This "fuzziness" is due to a fractal structure within the attractor, and the attractor is called a *strange attractor*.
+# Fractal nature of the strange attractor
+If we were able to zoom in on the Poincaré section easily, we would notice a complicated layered structure that occupies a compact region of phase space in the Poincaré section.
+
+This is the reason why it's called a strange attractor, it doesn't really have a finite period of cycles.
+
+The attractor has a self-similar structure: reappearance of certain patterns at smaller scales. This is a standard characteristic of a strange attractor. A shape like this is said to have a "fractal dimension".
+
+When you have a strange attractor, your system is chaotic. The attractor is complex enough that you could be at any of an infinite number of points. We cannot measure the initial condition, and nor can we choose some point $(\theta, \dot{\theta})$ to try and derive the initial conditions. This arises because there is always a closer possibility, the fractal nature makes chaotic behaviour inherently unpredictable.
+# Quantifying the approach to chaos
+## The Feigenbaum number
+On its way to chaos, we saw that the system first went into a period-doubling. Had there been more experiments, we could have seen the system progress into more and more doublings.
+
+These period-doubling events, called *bifurcations*, move closer and closer in $\beta$. This is called a *subharmonic cascade*.
+
+There is no way to predict these bifurcations analytically. They must be experimentally analyzed. Using some known values, we find that the bifurcations in our system occur at $\beta_{1}\approx 1.0663$, $\beta_{2}\approx 1.0793$, $\beta_{3}\approx 1.08$, $\beta_{4}\approx 1.0827$. After enough repetitions, you will find,
+$$
+\beta_{n+1} - \beta_{n} \approx \frac{1}{\delta} (\beta_{n} - \beta_{n-1})
+$$
+Where $\delta \approx 4.6692016$ is called the *Feigenbaum delta number*.
+
+Now, what happens as $n\to \infty$? Define $\Delta_{n}=\beta_{n+1}-\beta_{n}$:
+$$
+\Delta_{n+1} = \delta ^{-1}\Delta_{n} = \delta ^{-1} \left( \delta ^{-1} \Delta _{n-1} \right) = \delta^{-n}\Delta_{1}
+$$
+The total distance from $\beta_{1}$ as $n\to \infty$ is therefore,
+$$
+\Delta_{1} + \Delta_{2} + \Delta_{3} + \dots = \Delta_{1} + \delta ^{-1} \Delta_{1} + \dots = \sum_{n=0}^{\infty} \delta^{-n}\Delta_{1} = \frac{\Delta_{1}}{1-\delta ^{-1}} \approx 0.16543
+$$
+Which gives us the critical point where the number of periods diverges to infinity, the threshold for chaos,
+$$
+\beta_{c} = \beta_{1} + \sum_{n=0}^{\infty} \delta^{-n}\Delta_{1} \approx 1.0829
+$$
+- Numerous chaotic systems also undergo subharmonic cascades. The progression to chaos is typically also characterized by this Feigenbaum number, or very close
+# Bifurcation diagrams
+What happens if we increase $\beta$ more? You might think more chaos, but eventually you return to another single period attractor.
+
+$\beta=1.35$ for example, results in the phase plot
+![[Pasted image 20260308151411.png]]
+The pendulum is now continuously spinning around the top of the pendulum in one direction.
+
+If you once again increase $\beta$ to higher numbers, you will find subharmonic cascades occur again, and discover another chaotic regime.
+
+One method of visualizing this behaviour is by plotting the $\theta$ from your Poincare section as a function of $\beta$. When you have one period, plot one dot, when you have two, plot 2 dots. This is called a bifurcation diagram.
+
+![[Pasted image 20260308151804.png]]
+You can make a bifurcation diagram plotting either $\theta$ or $\dot{\theta}$, the shape is similar, but the exact values change.
+
+Over a more restricted range of $\beta$ values, you can more closely see the Feigenbaum number
+![[Pasted image 20260308152006.png]]
+
+If you zoom in very close to the lower right split you will see
+![[Pasted image 20260308152138.png]]
+Something very similar to the fuller version above. Displaying the self-similar structure of the bifurcation diagram.
+# Lyapunov exponent
+Suppose we have two trajectories with initial values $\theta_{0}^{(1)}$ and $\theta_{0}^{(2)}=\theta_{0}^{(1)}+\epsilon$, everything else is identical. The difference between the two after some time is,
+$$
+\left| \theta^{(2)}(t) - \theta^{(1)}(t) \right| = \Delta\theta(t) \approx \lvert \epsilon \rvert e^{ \lambda t }
+$$
+Where $\lambda$ is the Lyapunov exponent.
+- We also guess that the growth or decay is exponential
+
+If $\lambda<0$ solutions will converge over time. If $\lambda=0$, the trajectories stay the same distance apart, and if $\lambda>0$ the trajectories will diverge.
+
+We will use the simpler equation,
+$$
+\ln(\Delta\theta) = \lambda t + \ln \lvert \epsilon \rvert
+$$
+To solve for the exponent.
+## Non-chaotic example
+![[Pasted image 20260308152812.png]]
+The logarithm decreases more or less linearly. Is it important to note that the stagnation at -35 arises because of machine precision.
+
+Clearly, $\lambda<0$ here, and so the system is not chaotic.
+## Chaotic example
+![[Pasted image 20260308152957.png]]
+The slope here is dirtier, but we can clearly see that it is increasing.
+
+It is this divergence of trajectories that defines the sensitive dependence on initial
+conditions. If we don't know the initial condition perfectly (which we can't) then we don't know what trajectory we are on, and hence we don't know where we will be on the strange attractor at some later time.
