@@ -112,3 +112,14 @@ $$
 
 I conclude that the first force is not conservative, but the second is.
 # Question 3
+---
+1.
+$$
+F = -\nabla U =- \epsilon \frac{d}{dr} \left[ \left( \frac{r_{m}}{r} \right)^{12} - 2 \left( \frac{r_{m}}{r} \right)^{6} \right] = \frac{12\epsilon r_{m}^{6}}{r^{13}} (r^{6}_{m} - r^{6})
+$$
+- Stable equilibrium point is at the minimum $r=r_{m}$
+- It is repelling when $r<r_{m}$ and attracting when $r>r_{m}$
+- So the equilibrium point at the minimum is a stable equilibrium. It is a universally attracting equilibrium
+- I got this from plotting it in Desmos, but I believe the intention is to take another derivative
+---
+2.
