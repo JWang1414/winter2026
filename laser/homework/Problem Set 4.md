@@ -46,8 +46,9 @@ Substitute in the value of $l$ from above to find,
 $$
 w^{2}\left( \frac{f}{1+f^{2} /z_{0, \text{in}}^{2}} \right) = w_\text{in}^{2} \left( 1-\frac{1}{f}\left( \frac{f}{1+f^{2} /z_{0, \text{in}}^{2}} \right)  \right)^{2} + w_\text{in}^{2}\left( \frac{1}{z_{0}} \left( \frac{f}{1+f^{2} /z_{0, \text{in}}^{2}} \right)  \right)^{2}
 $$
+Which can be simplified to:
 $$
-w(l) = \frac{\lambda f}{\pi w_\text{in}} \frac{1}{\sqrt{ 1+f^{2} /z_{0, \text{in}}^{2} }}
+w(l) = \frac{\lambda f}{\pi w_\text{in}} \left( 1+f^{2} /z_{0, \text{in}}^{2} \right) ^{-1/2}
 $$
 ---
 c.
@@ -64,36 +65,45 @@ $$
 # Question 2
 ---
 a.
-The form for this beam is,
+The form for the beam described in the question is:
 $$
 E(x, y, z, t) = E_{0} \exp \left( -\frac{x^{2}+y^{2}}{w_{0}^{2}} \right)e^{ -i\omega t }
 $$
-Fraunhofer approximation:
+For the remainder of this question, I will drop the $t$ dependence. The Fraunhofer approximation is:
 $$
 \mathcal{E}(x, y, z) = -\frac{i}{\lambda z} e^{ ikz } \exp\left( \frac{ik}{2z} (x^{2}+y^{2}) \right) \iint \mathcal{E}(x', y', 0) \exp\left( -\frac{ik}{z}(xx'+yy') \right) \, dx' \, dy'
 $$
 Compute,
 $$
-\iint E_{0} \exp \left( -\frac{x'^{2}+y'^{2}}{w_{0}^{2}} \right)e^{ -i\omega t } \exp\left( -\frac{ik}{z}(xx'+yy') \right) \, dx' \, dy'
+\iint E_{0} \exp \left( -\frac{x'^{2}+y'^{2}}{w_{0}^{2}} \right) \exp\left( -\frac{ik}{z}(xx'+yy') \right) \, dx' \, dy'
 $$
 $$
-E_{0} e^{ -i\omega t } \int e^{ -x'^{2}/w_{0}^{2} } e^{ -ikxx'/z } \, dx ' \int e^{ -y'^{2}/w_{0}^{2} } e^{ -ikyy'/z } \, dy'
+E_{0} \int e^{ -x'^{2}/w_{0}^{2} } e^{ -ikxx'/z } \, dx ' \int e^{ -y'^{2}/w_{0}^{2} } e^{ -ikyy'/z } \, dy'
 $$
-There is really just one integral here,
+Both of these integral are the same. They are Gaussian integrals of the form:
+$$
+\int e^{ -ax^{2}-bx } \, dx = \sqrt{ \frac{\pi}{a} } e^{ b^{2}/4a }
+$$
+Where in this case:
+$$
+a=\frac{1}{w_{0}^{2}} \qquad b=\frac{ikx}{z}
+$$
+This integral is therefore:
 $$
 \int \exp\left( -\frac{x'^{2}}{w_{0}^{2}} - \frac{ik}{z}xx' \right) \, dx' = \sqrt{ \pi } w_{0}\exp \left[ -\left( \frac{kw_{0}x}{2z} \right)^{2} \right]
 $$
+So the full integral, accounting for both the $x$ and $y$ is:
 $$
-E_{0} e^{ -i\omega t } \pi w_{0}^{2} \exp \left[ -\left( \frac{kw_{0}}{2z} \right)^{2}(x^{2}+y^{2}) \right]
+E_{0} \pi w_{0}^{2} \exp \left[ -\left( \frac{kw_{0}}{2z} \right)^{2}(x^{2}+y^{2}) \right]
 $$
-Total function is,
+Substituting this back into the Fraunhofer approximation:
 $$
 \mathcal{E}(x, y, z) = -\frac{i}{\lambda z} e^{ ikz } \exp\left( \frac{ik}{2z} (x^{2}+y^{2}) \right) \left[ E_{0} \pi w_{0}^{2} \exp \left[ -\left( \frac{kw_{0}}{2z} \right)^{2}(x^{2}+y^{2}) \right] \right]
 $$
 $$
 \mathcal{E}(x, y, z) = -\frac{i\pi w_{0}^{2}}{\lambda z} E_{0} e^{ ikz } \exp\left( \frac{ik}{2z} (x^{2}+y^{2}) \right) \exp \left[ -\left( \frac{kw_{0}}{2z} \right)^{2}(x^{2}+y^{2}) \right]
 $$
-By observation, the spot size of this new beam is,
+By observation, the second exponential suggests spot size of this new beam is,
 $$
 w(z) = \left( \frac{kw_{0}}{2z} \right)^{-1} = \frac{2z}{kw_{0}} = \frac{\lambda z}{\pi w_{0}} = \frac{w_{0}z}{z_{0}}
 $$
@@ -147,10 +157,16 @@ $$
 - \frac{iz_{0}}{z} \frac{E_{0}}{1-i z_{0} /z} e^{ ikz } e^{ ik(x^{2}+y^{2})/2z } E_{0} \exp \left[ -\left( \frac{kw_{0}}{2z} \right)^{2} \frac{x^{2}+y^{2}}{1-iz_{0} /z} \right]
 $$
 - I suspect that this version is supposed to be more similar to the PWE solution but I'm struggling to come up with anything here
+$$
+w(z) = w_{0}\sqrt{ 1+\frac{z^{2}}{z_{0}^{2}} }
+$$
 # Question 3
-Propagate 20 cm, go through a lens, and then enter a slab of glass.
+Starting from the waist, this beam propagates 20 cm, goes through a lens, enters a slab of glass, and then propagates some distance to a focus. The $ABCD$ matrix representing this system is:
 $$
 \begin{bmatrix}
+1 & l \\
+0 & 1
+\end{bmatrix} \begin{bmatrix}
 1 & 0 \\
 0 & n_{1} /n_{2}
 \end{bmatrix} \begin{bmatrix}
@@ -159,34 +175,62 @@ $$
 \end{bmatrix} \begin{bmatrix}
 1 & d \\
 0 & 1
-\end{bmatrix} = \begin{bmatrix}
-1 & d \\
--\frac{n_{1}}{fn_{2}} & \frac{n_{1}}{n_{2}}-\frac{n_{1}d}{fn_{2}}
+\end{bmatrix} = \frac{1}{fn_{2}} \begin{bmatrix}
+fn_{2}-ln_{1} & -dln_{1}+dfn_{2}+l fn_{1} \\
+-n_{1} & fn_{1}-dn_{1}
 \end{bmatrix}
 $$
+In the form of the Mobius transform for the $q$ factor:
 $$
-q_{f} = \frac{q_{i}+d}{-(n_{1} /fn_{2})q_{i}+(n_{1} /n_{2} - n_{1}d /fn_{2})} = -\frac{fn_{2}(d+q_{i})}{n_{1}(d-f+q_{i})}
-$$
-$$
-= - \frac{2(1.5)(20+q_{i})}{1(20-2+q_{i})} = -\frac{3(q_{i}+20)}{q_{i}+18}
+q_{f} = \frac{(fn_{2}-ln_{1})q_{i} -dln_{1}+dfn_{2}+l fn_{1}}{(-n_{1})q_{i} + fn_{1}-dn_{1}}
 $$
 $$
-q_{i} = z+iq_{0} = -20+iq_{0}
+= \frac{((2.0)(1.5)-l)q_{i} -(20)l+(20)(2.0)(1.5)+l (2.0)}{-q_{i} + (2.0)-(20)} = \frac{(l-3)q_{i}+18l-60}{18+q_{i}}
+$$
+Where I have used the fact that:
+$$
+n_{1}=1 \qquad n_{2}=1.5 \qquad f=2.0 \qquad d=20
+$$
+By definition:
+$$
+q_{i} = z-iz_{0}
+$$
+Where:
+$$
+z=-20 \qquad z_{0}=\frac{\pi w_{0}^{2}}{\lambda} = \frac{(50 \times 10^{-4})^{2}}{0.5 \times 10^{-4}}\pi = 0.5\pi
+$$
+Therefore,
+$$
+q_{i} = -20 - 0.5\pi i
+$$
+Simplify.
+$$
+\frac{1}{q_{f}} = \frac{18+q_{i}}{(l-3)q_{i}+18l-60} = \frac{18+(-20-0.5\pi i)}{(l-3)(-20-0.5\pi i)+18l-60} = \frac{2+0.5\pi i}{(2+0.5\pi i)l+1.5\pi i}
 $$
 $$
-q_{f} = -\frac{3(-20-iz_{0})+20}{-20-iz_{0}+18}
+= \frac{0.25\pi^{2}l + 4l + 0.75\pi^{2}-3\pi i}{0.25\pi^{2}l^{2}+4l^{2}+1.5lp^{2}+2.25\pi^{2}}
 $$
 $$
-\frac{1}{q_{f}} = \frac{1}{R} + i \frac{\lambda}{\pi n_{2}w^{2}} = -\frac{3z_{0}^{2}+80}{9z_{0}^{2}+1600} - i \frac{34z_{0}}{9z_{0}^{2}+1600}
+= \frac{(0.25\pi^{2}+4)l + 0.75\pi^{2}-3\pi i}{}
 $$
-Equate the real and imaginary parts:
+
+
 $$
-\frac{1}{R} = -\frac{3z_{0}^{2}+80}{9z_{0}^{2}+1600}
+\frac{-2+0.5\pi i}{-2l+0.5\pi i(l-3)} = \frac{0.25\pi^{2}l + 4l-0.75\pi^{2}-3\pi i}{0.25\pi^{2}l^{2} + 4l^{2}-1.5\pi^{2}l + 2.25\pi^{2}}
 $$
 $$
-\frac{\lambda}{\pi nw^{2}} = - \frac{34z_{0}}{9z_{0}^{2}+1600}
+\frac{(0.25\pi^{2}+4)l - 0.75\pi^{2}-3\pi i}{(0.25\pi^{2}+4)l^{2}-1.5\pi^{2}l+2.25\pi^{2}}
 $$
-Where,
+$q_{f}$ inside of the glass is:
 $$
-z_{0}= \frac{\pi n_{1}w_{0}^{2}}{\lambda} = \frac{\pi w_{0}^{2}}{\lambda} = \frac{\pi(50\times 10^{-4})^{2}}{0.5\times 10^{-4}} = 0.5\pi \text{ cm}
+\frac{1}{q_{f}} = \frac{1}{R} + i \frac{\lambda}{\pi nw^{2}}
 $$
+Equate the real and imaginary parts,
+$$
+\frac{1}{R} = \frac{(0.25\pi^{2}+4)l - 0.75\pi^{2}}{(0.25\pi^{2}+4)l^{2}-1.5\pi^{2}l+2.25\pi^{2}}
+$$
+The beam waist is found when $R\to \infty$ and therefore $R^{-1}=0$
+$$
+(0.25\pi^{2}+4)l - 0.75\pi^{2} =0 \implies  l = \frac{0.75\pi^{2}}{0.25\pi^{2}+4} \approx 1.145 \text{ cm}
+$$
+So the beam comes to a focus 1.145 cm into the glass.
