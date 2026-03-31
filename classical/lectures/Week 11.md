@@ -66,3 +66,94 @@ $$
 f(x) = A \cos(k_{n}x) \qquad k_{n} = \frac{\pi n}{L}
 $$
 Instead of $\sin(k_{n}x)$.
+# Central Forces and Conservation Laws
+A force is said to be central if its potential depends only on $r$
+$$
+\vec{F} = F(r) \hat{r}
+$$
+Recall that for a force to be conservative we require:
+1. $\vec{F}=\vec{F}(\vec{r})$, so the force does not depend on time or velocity
+2. $\vec{F}=-\nabla U$, so the force can be expressed as the gradient of a potential
+
+Since our force is central, there is no theta dependence and our function can be written as:
+$$
+F(r) = -\frac{dU}{dr}
+$$
+And so we can conclude central forces are conservative.
+
+Integrating $F$, we also find that,
+$$
+U(r) - U_{0} = - \int_{r_{0}}^{r} F(r') \, dr'
+$$
+In practice we typically attempt to use an $r_{0}$ such that $U_{0}=0$.
+# Rate of change of the mechanical energy
+For the kinetic energy,
+$$
+K = \frac{1}{2} mv^{2} = \frac{1}{2} m\vec{v}\cdot \vec{v} \implies  \dot{K} = \frac{m}{2} (\dot{v}\cdot v+v\cdot \dot{v}) = m\dot{v}\cdot v
+$$
+Which can be simplified into:
+$$
+\dot{K} = \vec{F}\cdot \vec{v}
+$$
+This is true for any force in 3D.
+
+For the potential energy,
+$$
+\dot{U} = \frac{dU}{dt} = \frac{ \partial U }{ \partial x } \dot{x} + \frac{ \partial U }{ \partial y } \dot{y} + \frac{ \partial U }{ \partial z } \dot{z} = \vec{v}\cdot \nabla U
+$$
+Since for conservative forces $\vec{F}=-\nabla U$ this becomes,
+$$
+\dot{U}=-\vec{F}\cdot \vec{v}=-\vec{K} \implies  \dot{E}=0
+$$
+This is true for any conservative force, and so also true for central forces.
+# Central forces conserve angular momentum
+Recall the angular momentum is,
+$$
+\vec{L} = \vec{r}\times \vec{p}
+$$
+Where $\vec{p}=m\vec{v}$ is the momentum of a particle.
+
+Note that:
+- If a particle is subject to only a central force, $\vec{L}$ is conserved
+- If $\vec{L}$ is conserved, the plane of motion is fixed
+
+If the plane of motion is fixed, it can be convenient to define the third dimension $\hat{z}=\hat{r}\times\hat{\theta}$ such that $\vec{L}=L\hat{z}$.
+# Kinematics and dynamics under conservation of $\vec{L}$
+Recall that the force in polar coordinates as:
+$$
+F_{r} = m(\ddot{r}-r\dot{\theta}^{2}) \qquad F_{\theta} = m(2\dot{r}\dot{\theta}+r \ddot{\theta})
+$$
+In the case of our central force, these equations simplify into:
+$$
+m(\ddot{r}-r\dot{\theta}^{2}) = -\frac{dU}{dr} \qquad m(2\dot{r}\dot{\theta}+r \ddot{\theta})=0
+$$
+This second statement implies the conservation of angular momentum,
+$$
+\vec{L}=\vec{r}\times p\vec{r} = mr^{2}\dot{\theta}(\hat{r}\times\hat{\theta}) \equiv L\hat{z}
+$$
+Where we have defined $L=mr^{2}\dot{\theta}$.
+# Solving the central force problem
+First, we have,
+$$
+L = mr^{2}\dot{\theta} \implies  \dot{\theta} = \frac{L}{mr^{2}}
+$$
+Therefore, according to Newton's 2nd law we have,
+$$
+m(\ddot{r} - r\dot{\theta}^{2}) = - \frac{dU}{dr} \implies  m\ddot{r} = mr\dot{\theta}^{2} - \frac{dU}{dr}
+$$
+Which, using the previous relation can be written as,
+$$
+m\ddot{r} = -\frac{dU}{dr} - \frac{d}{dr} \left( \frac{L^{2}}{2mr^{2}} \right) = -\frac{dU_\text{eff}}{dr}
+$$
+Where we have defined,
+$$
+U_\text{eff}(r) = U(r) + \frac{L^{2}}{2mr^{2}}
+$$
+The total conservative energy is now:
+$$
+E = \frac{1}{2} m\dot{r}^{2} + U_\text{eff}(r)
+$$
+However, the kinetic energy here has been changed to:
+$$
+K = \frac{1}{2} mv^{2} + \frac{1}{2} m(v_{r}^{2}+v_{\theta}^{2}) = \frac{1}{2} m \left( \dot{r}^{2}+\frac{L^{2}}{m^{2}r^{2}} \right)
+$$
