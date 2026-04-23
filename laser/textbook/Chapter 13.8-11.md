@@ -61,3 +61,53 @@ V = \frac{\left< I(P) \right>_\text{max} - \left< I(P) \right>_\text{min} }{\lef
 $$
 The Michelson interferometer is used to measure temporal coherence, as opposed to the Young two-slit interferometer, which is used to measure spatial coherence.
 # Temporal Coherence
+Experimentally, we find that the visibility will decrease for larger $\tau$ and for larger bandwidths $\delta \nu$.
+
+Suppose we have some radiation of spectral width $\delta \lambda$ incident on a Michelson interferometer. Each wavelength component of the incident radiation is associated with a different pattern of bright and dark spots as $\lvert d_{1}-d_{2} \rvert$ is varied.
+
+Assume that the intensity is constant for wavelength between $\lambda\pm \delta \lambda /2$ like so:
+![[Pasted image 20260422234101.png]]
+
+The interference pattern will be smeared out if the largest wavelength $\lambda+\delta \lambda /2$ corresponds with an intensity maximum, and $\lambda-\delta \nu /2$ corresponds with a minimum. This yields the following system of equations:
+$$
+\begin{align}
+\lvert d_{1}-d_{2} \rvert  & = n \left( \lambda+\frac{1}{2}\delta \lambda \right) \\
+\lvert d_{1}-d_{2} \rvert  & = \left( n+\frac{1}{2} \right) \left( \lambda - \frac{1}{2}\delta \lambda \right)
+\end{align}
+$$
+Solving this system of equations yields the condition:
+$$
+\lvert d_{1}-d_{2} \rvert \left( \frac{1}{\lambda-\delta \lambda /2} - \frac{1}{\lambda+\delta \lambda /2} \right) = \frac{1}{2}
+$$
+Use the approximation $\delta \lambda\ll \lambda$ to find:
+$$
+\lvert d_{1}-d_{2} \rvert  = c \tau = \frac{\lambda^{2}}{2(\delta \lambda)}
+$$
+Now, since $\lambda=c /\nu$,
+$$
+\left| \frac{d\lambda}{d\nu} \right|  = \frac{c}{\nu^{2}} = \frac{\lambda}{\nu}
+$$
+Which therefore tells us that for small increments,
+$$
+\frac{\delta \lambda}{\delta \nu} = \frac{\lambda}{\nu} \implies  \frac{\delta \lambda}{\lambda} = \frac{\delta \nu}{\nu}
+$$
+Substitute this into our previous condition to obtain:
+$$
+c\tau = \frac{\lambda \nu}{2(\delta \nu)} = \frac{c}{2(\delta \nu)}
+$$
+Which can be further simplified into:
+$$
+\tau = \frac{\lvert d_{1}-d_{2} \rvert }{c} = \frac{1}{2(\delta \nu)}
+$$
+Physically, this is the path length difference in the Michelson interferometer where  the interference pattern will be smeared out. Any separation larger than $\tau$ should result in a very low visibility.
+
+In agreement with experiments, $\tau$ decreases for increasing bandwidth $\delta \nu$.
+
+Generally speaking, since intensity distributions are not uniform as we have modelled, it is conventional to define:
+$$
+\tau _\text{coh} = \frac{1}{2\pi(\delta \nu)}
+$$
+As the coherence time for quasi-monochromatic radiation of bandwidth $\delta \nu$. The associated coherence length of the Michelson interferometer is $c\tau _\text{coh}$.
+
+- Lasers with a single transverse mode have perfect spatial coherence, but the temporal coherence has dependence on the longitudinal modes
+- Generally, as the number of longitudinal modes increases, the temporal coherence will decrease
